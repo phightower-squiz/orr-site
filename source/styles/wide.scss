@@ -10,14 +10,39 @@
  * Modules
 {{toc}}
  */
+ @import "boilerplate.scss";
+// Grid
+$grid-columns: 12;
 
- 
+@for $i from 1 through $grid-columns {
+    .grid-#{$i} {@include column($i);}
+}
+@for $i from 1 through $grid-columns {
+    .push-#{$i} { @include push($i);}
+}
+@for $i from 1 through $grid-columns {
+    .pull-#{$i} { @include pull($i);}
+}
+
+.container {
+    @include outer-container();
+    @extend %clearfix;
+    
+}
+.container-fluid {
+    @extend %clearfix;
+    margin: 0;
+    width: 100%;
+
+}
 /*
 --------------------
 Modules
 --------------------
 */
 
-body {
-	color: blue;
-}
+@import "header_desktop.scss";
+@import "footer_desktop.scss";
+@import "home_desktop.scss";
+@import "inner_desktop.scss";
+@import "nav_desktop.scss";

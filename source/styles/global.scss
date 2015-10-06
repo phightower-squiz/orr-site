@@ -86,17 +86,7 @@ img {
     //@include outer-container();
     
 }
-.container {
-    @include outer-container();
-    @extend %clearfix;
-    
-}
-.container-fluid {
-    @extend %clearfix;
-    margin: 0;
-    width: 100%;
 
-}
 // Reset fonts for relevant elements (taken from bootstrap)
 input,
 button,
@@ -151,12 +141,3 @@ Vendors
 */
     @import "slick.scss";
 
-// media queries
-@media screen and (max-width: $container-max-width) {
-    .container {
-        //margin: 0 20px 20px 20px;
-    }
-}
-@media screen and (max-width: 768px) {
-   // @import "small.scss";
-}

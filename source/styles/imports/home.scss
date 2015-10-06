@@ -9,21 +9,28 @@
 		.grid-8 {
 
 			position: relative;
+			.home-about {
+				display: none;
+			}
 			.slider-info {
+				@extend %clearfix;
 				position: absolute;
-				bottom: 25px;
-				left: 25px;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 20px;
 				padding: 20px;
 				z-index: 1;
 				background: rgba(255,255,255,0.90);
-				width: 60%;
+
 				a {
 					text-decoration: none;
 					color: darken($company-color,10%);
 					float: left;
 				}
 				.slider-nav {
-					float: right;
+					//float: right;
+					@extend %clearfix;
 					button {
 						background: none;
 						border: none;

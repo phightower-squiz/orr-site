@@ -1,6 +1,6 @@
 nav {
 	width: 100%;
-	border-top: 6px solid $company-color;
+	//sborder-top: 6px solid $company-color;
 	position: relative;
 
 	ul {
@@ -30,12 +30,8 @@ nav {
 		}
 		// main nav specific
 		&.mainnav {
-			display: table;
-			width: 100%;
-			li {
-				display: table-cell;
-				width: auto;
-			}
+			display: none;
+			
 		}
 
 		// sub navigation

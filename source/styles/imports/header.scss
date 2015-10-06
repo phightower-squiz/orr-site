@@ -1,6 +1,6 @@
 header {
 	@extend %clearfix;
-	@include outer-container();
+	/*@include outer-container();
 	.logo {
 		margin: 1em 0;
 	}
@@ -19,6 +19,27 @@ header {
 			padding: 5px;
 			outline: none;
 		}
+	}*/
+	.search {
+		width: 90%;
+		border: 1px solid darken($company-color,10%);
+		background: url('../mysource_files/mag.png') no-repeat 97% 10px;
+		margin: 0 auto;
+		form {
+			text-align: left;
+			input {
+				border: none;
+				width: 88%;
+				height: 20px;
+				
+				padding: 5px;
+				outline: none;
+
+			}
+		}
+		
 	}
+	text-align: center;
+	padding: 0 10px;
 	
 }
