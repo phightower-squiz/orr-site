@@ -1,0 +1,16 @@
+{
+	"links": [
+		{
+			"title": "Home",
+			"link": "#"
+		},
+		{
+			"title": "Inner page",
+			"link": "#"
+		},
+		{
+			"title": "Current page"
+		}
+	]
+	
+}

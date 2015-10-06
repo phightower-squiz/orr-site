@@ -1,0 +1,17 @@
+{
+
+    "source":        "source",
+    "dest":          "dist",
+    "tmp":           ".tmp",
+    "file_dest":     "mysource_files",
+    "module_prefix": "squiz-module-",
+    "autoprefixer": true,
+    "browsers": [
+        "> 1%",
+        "last 2 versions",
+        "Firefox ESR",
+        "Opera 12.1",
+        "IE 8",
+        "IE 9"
+    ]
+}

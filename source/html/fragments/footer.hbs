@@ -1,0 +1,40 @@
+{{#footer}}
+	<div class="container footer">
+	{{#each footer_content}}
+
+		{{#if links.1.social_icon}}
+
+			<div class="grid-footer grid-social">
+		{{else}}
+			<div class="grid-footer">
+
+		{{/if}}
+		
+			<h2>{{heading}}</h2>
+
+			{{#if links}}
+				<ul>
+
+				{{#each links}}
+					{{#if social_icon}}
+						<li class="social"><a href="{{link}}"><div class="social-icon {{social_icon}}"></div></a></li>
+					{{else}}
+						<li><a href="{{link}}">{{title}}</a></li>
+					{{/if}}
+				{{/each}}
+				</ul>
+			{{/if}}
+			</div>
+		
+	{{/each}}
+
+	</div>
+{{/footer}}
+
+{{#copyright}}
+    <div class="copyright">
+    	<div class="grid-5">&copy; {{copyright_content}}</div>
+    	<div class="grid-7 license"><img src="mysource_files/logo-ogl.png">{{license}}</div>
+    </div>
+{{/copyright}}
+

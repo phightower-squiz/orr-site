@@ -1,0 +1,16 @@
+{{#breadcrumbs}}
+	<div class="container breadcrumbs">
+		<ul>
+			{{#each links}}
+				<li>
+					{{#if link}}
+					<a href="{{link}}">{{title}}</a></li>
+					{{else}}
+					{{title}}
+					{{/if}}
+			{{/each}}
+		</ul>
+	</div>
+{{/breadcrumbs}}
+	
+

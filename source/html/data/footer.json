@@ -1,0 +1,115 @@
+{
+	"footer_content": [
+		{
+			"heading": "About ORR",
+			"links": [
+				{
+					"title": "Title",
+					"link": "#"
+				},
+				{
+					"title": "Title 2",
+					"link": "#"
+				},
+				{
+					"title": "Title 3",
+					"link": "#"
+				},
+				{
+					"title": "Title 4",
+					"link": "#"
+				}
+			]
+		},
+		{
+			"heading": "Other ORR Sites",
+			"links": [
+				{
+					"title": "Title",
+					"link": "#"
+				},
+				{
+					"title": "Title 2",
+					"link": "#"
+				},
+				{
+					"title": "Title 3",
+					"link": "#"
+				},
+				{
+					"title": "Title 4",
+					"link": "#"
+				}
+			]
+		},
+		{
+			"heading": "About this Site",
+			"links": [
+				{
+					"title": "Title",
+					"link": "#"
+				},
+				{
+					"title": "Title 2",
+					"link": "#"
+				},
+				{
+					"title": "Title 3",
+					"link": "#"
+				},
+				{
+					"title": "Title 4",
+					"link": "#"
+				}
+			]
+		},
+		{
+			"heading": "Contact Us",
+			"links": [
+				{
+					"title": "Title",
+					"link": "#"
+				},
+				{
+					"title": "Title 2",
+					"link": "#"
+				},
+				{
+					"title": "Title 3",
+					"link": "#"
+				},
+				{
+					"title": "Title 4",
+					"link": "#"
+				}
+			]
+		},
+		{
+			"heading": "Follow Us",
+			"links": [
+				{
+					"social_icon": "twitter",
+					"link": "#"
+				},
+				{
+					"social_icon": "linked-in",
+					"link": "#"
+				},
+				{
+					"social_icon": "youtube",
+					"link": "#"
+				},
+				{
+					"social_icon": "rss",
+					"link": "#"
+				},
+				{
+					"social_icon": "email",
+					"link": "#"
+				}
+				
+			]
+		}
+	]
+	
+}

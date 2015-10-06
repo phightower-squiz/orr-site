@@ -1,0 +1,21 @@
+
+h1 {
+	color: darken($company-color,10%);
+	font-size: 1.5em;
+	margin-top: 0;
+}
+h2 {
+	color: #000;
+	margin-top: 0;
+}
+h3 {
+	color: #000;
+	margin-top: 0;
+}
+a {
+	color: $main-link-color;
+	text-decoration: none;
+	&:hover {
+		color: $main-link-hover-color;
+	}
+}
