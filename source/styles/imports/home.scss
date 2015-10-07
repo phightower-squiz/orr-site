@@ -18,8 +18,8 @@
 				bottom: 0;
 				left: 0;
 				right: 0;
-				height: 20px;
-				padding: 20px;
+				height: 40px;
+				padding: 0;
 				z-index: 1;
 				background: rgba(255,255,255,0.90);
 
@@ -29,8 +29,8 @@
 					float: left;
 				}
 				.slider-nav {
-					//float: right;
 					@extend %clearfix;
+					display: block;
 					button {
 						background: none;
 						border: none;
@@ -133,7 +133,7 @@
 			width: 100%;
 		}
 		div[class*='spotlight'] {
-			height: 410px;
+			padding: 0;
 		}
 		.spotlight1 {
 			background: $spotlight1-color;
