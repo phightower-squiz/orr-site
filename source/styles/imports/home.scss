@@ -1,14 +1,14 @@
-/* SLIDER */
-.main-slider {
 
-	
-}
 .container {
+	div[class*='grid-'] {
+		//padding: 0;
+	}
 	&.top {
 
 		.grid-8 {
 
 			position: relative;
+			padding: 0;
 			.home-about {
 				display: none;
 			}
@@ -158,6 +158,7 @@
 /* bottom secion - Twitter API */
 .container-fluid {
 	&.bottom {
+		@extend %clearfix;
 		background: lighten(#000,80%);
 		text-align: center;
 		padding: 20px 0;

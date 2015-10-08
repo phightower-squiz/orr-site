@@ -85,4 +85,7 @@ $(window).load(function(){
 	$('.slick-pause').on('click', function(){
 		$('.main-slider').slick('slickPause');
 	});
+	$('.twitter-block').slick({
+		slidesToShow: 3
+	});
 });
