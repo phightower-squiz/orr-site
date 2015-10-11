@@ -23,7 +23,7 @@
 Global
 --------------------
 */
-//  Declare JS Enabled.
+//  Declare JS Enabled. 
 $('body').removeClass('no-js').addClass('js-enabled');
 
 
@@ -80,12 +80,31 @@ $(window).load(function(){
 		appendArrows: $(".slider-nav"),
 		appendDots: $(".slider-nav"),
 		nextArrow: '<button type="button" class="slick-next">></button>',
-		prevArrow: '<button type="button" class="slick-prev"><</button>'
+		prevArrow: '<button type="button" class="slick-prev"><</button>',
+
 	});
 	$('.slick-pause').on('click', function(){
 		$('.main-slider').slick('slickPause');
 	});
 	$('.twitter-block').slick({
-		slidesToShow: 3
+		slidesToShow: 3,
+		responsive: [
+	    
+	    {
+	      breakpoint: 768,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 2
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        slidesToShow: 1,
+	        slidesToScroll: 1
+	      }
+	    }
+
+	  ]
 	});
 });

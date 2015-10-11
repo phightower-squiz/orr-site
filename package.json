@@ -9,6 +9,7 @@
   "dependencies": {
     "assemble": "~0.4.42",
     "async": "~0.2.5",
+    "generator-squiz-boilerplate-assemble": "git+https://github.com/phightower-squiz/squiz-boilerplate.git",
     "grunt": "~0.4.2",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
@@ -18,7 +19,7 @@
     "grunt-contrib-watch": "~0.5.2",
     "grunt-cssbeautifier": "^0.1.2",
     "grunt-newer": "~0.6.0",
-    "grunt-squiz-boilerplate": "git+https://gitlab.squiz.net/boilerplate/grunt-squiz-boilerplate.git",
+    "grunt-squiz-boilerplate": "git+https://github.com/phightower-squiz/grunt-squiz-boilerplate",
     "handlebars": "^2.0.0",
     "jit-grunt": "0.8.0",
     "jshint-stylish": "~0.1.3",
