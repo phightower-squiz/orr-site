@@ -34,44 +34,71 @@ Modules
 */
 function mobileMenu(eventEl) {
 	eventEl.on('click', function() {
-		$('nav').css('left',0);
-		$('mainnav').addClass('mobile').fadeIn();
+
+		$('.mainnav').addClass('mobile');
+
+		if(!$('nav').hasClass('shown')) {
+			$('nav').addClass('shown');
+		}
+		else {
+			$('nav').removeClass('shown');
+		}
+		
+		//subNavClick($('.mobile > li'));
 		
 	});
 }
+function subNavClick(clickEl) {
+	var targetEl;
+	clickEl.on('click', function() {
+		targetEl = $(this).children('.subnav');
+
+		if(targetEl.length > 0) {
+			targetEl.stop(true, true).slideToggle();
+		}
+	});
+	
+}
 function subNavHover(hoverEl) {
 	var targetEl;
-	hoverEl.hover(
-		function(){
-			targetEl = $(this).children('.subnav');
-			if(targetEl.length > 0) {
-				targetEl.fadeIn();
-			}
-			
-		},
-		function(){
-			targetEl.fadeOut();
-		}
-	);
+		hoverEl.hover(
+			function(){
+				if(!$('.mainnav').hasClass('mobile')) {
+					targetEl = $(this).children('.subnav');
+					if(targetEl.length > 0) {
+						targetEl.fadeIn();
+					}
+				}
+					
+			},
+				function(){
+					if(!$('.mainnav').hasClass('mobile')) {
+						targetEl.fadeOut();
+					}
+				}
+		);
 	
 }
 
 function subNavAdjust(el) {
 	var targetEls = el.children('.subnav');
-	targetEls.each(function() {
+	if(!$('.mainnav').hasClass('mobile')) {
+		targetEls.each(function() {
 
-		// adjust position if over edge of window
-		var subNavWidth = $(this).width();
-		var winWidth = $(window).width();
-		var subNavPos = $(this).parent().position();
-		var subNavPosLeft = subNavPos.left;
+			// adjust position if over edge of window
+			var subNavWidth = $(this).width();
+			var winWidth = $(window).width();
+			var subNavPos = $(this).parent().position();
+			var subNavPosLeft = subNavPos.left;
 
-		if(subNavPosLeft + subNavWidth > winWidth) {
-			var diff = (subNavPosLeft + subNavWidth) - winWidth;
-			$(this).css('left', (subNavPosLeft - diff) + 'px');
-		}
+			if(subNavPosLeft + subNavWidth > winWidth) {
+				var diff = (subNavPosLeft + subNavWidth) - winWidth;
+				$(this).css('left', (subNavPosLeft - diff) + 'px');
+			}
 
-	});
+		});
+	}
+	
 }
 $(document).ready(function() {
 
