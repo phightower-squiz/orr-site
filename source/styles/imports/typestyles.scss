@@ -1,4 +1,6 @@
-
+h1, h2, h3 {
+	font-feature-settings: "liga" off;
+}
 h1 {
 	color: darken($company-color,10%);
 	font-size: 1.5em;

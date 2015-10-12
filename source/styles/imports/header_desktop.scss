@@ -1,6 +1,9 @@
 header {
 	@extend %clearfix;
 	@include outer-container();
+	.mobile-menu {
+		display: none;
+	}
 	.logo {
 		margin: 1em 0;
 	}

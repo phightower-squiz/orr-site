@@ -58,10 +58,11 @@ footer {
 		min-height: 50px;
 		color: #fff;
 		font-size: 0.85em;
-		padding: 10px 0;
+		padding: 10px;
+		text-align: center;
 		@extend %clearfix;
 		.license {
-			text-align: right;
+			
 			img {
 				margin-right: 10px;
 			}

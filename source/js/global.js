@@ -32,6 +32,13 @@ $('body').removeClass('no-js').addClass('js-enabled');
 Modules
 --------------------
 */
+function mobileMenu(eventEl) {
+	eventEl.on('click', function() {
+		$('nav').css('left',0);
+		$('mainnav').addClass('mobile').fadeIn();
+		
+	});
+}
 function subNavHover(hoverEl) {
 	var targetEl;
 	hoverEl.hover(
@@ -70,6 +77,7 @@ $(document).ready(function() {
 
 	subNavHover($('nav > ul > li'));
 	subNavAdjust($('nav > ul > li'));
+	mobileMenu($('.mobile-menu a'));
 
 });
 $(window).load(function(){
@@ -88,6 +96,8 @@ $(window).load(function(){
 	});
 	$('.twitter-block').slick({
 		slidesToShow: 3,
+		nextArrow: '<button type="button" class="slick-next">></button>',
+		prevArrow: '<button type="button" class="slick-prev"><</button>',
 		responsive: [
 	    
 	    {

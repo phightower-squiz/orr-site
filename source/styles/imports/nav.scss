@@ -1,9 +1,10 @@
 nav {
-	width: 100%;
-	//sborder-top: 6px solid $company-color;
-	position: relative;
+	position: absolute;
+	left: -300px;
+	z-index: 3;
 
-	ul {
+
+	ul.mobile {
 		list-style-type: none;
 		text-align: center;
 		margin: 0 auto;
@@ -11,7 +12,7 @@ nav {
 		max-width: $container-max-width;
 
 		li {
-			display: inline-block;
+			//display: inline-block;
 			//position: relative;
 
 			a {

@@ -20,6 +20,31 @@ header {
 			outline: none;
 		}
 	}*/
+	text-align: center;
+	padding: 0 10px;
+	.mobile-menu {
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		z-index: 2;
+		a {
+			color: $main-nav-color;
+			display: table;
+			margin: 0 auto;
+			&:hover {
+				color: lighten($main-nav-color, 30%);
+			}
+		}
+		span {
+			display: table-cell;
+			vertical-align: middle;
+			padding-right: 10px;
+
+		}
+		.fa-bars {
+			font-size: 2em;
+		}
+	}
 	.search {
 		width: 90%;
 		border: 1px solid darken($company-color,10%);
@@ -39,7 +64,6 @@ header {
 		}
 		
 	}
-	text-align: center;
-	padding: 0 10px;
+	
 	
 }
