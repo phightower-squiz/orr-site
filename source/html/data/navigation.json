@@ -6,7 +6,17 @@
         "sub_nav": [
         	{
         		"title": "Subtitle 1",
-        		"link": "#"
+        		"link": "#",
+                "sub_nav2": [
+                    {
+                      "title": "Sub subnav 1",
+                      "link": "#"
+                    },
+                    {
+                      "title": "Sub subnav 2",
+                      "link": "#"
+                    }
+                ]
         	},
         	{
         		"title": "Subtitle 2",

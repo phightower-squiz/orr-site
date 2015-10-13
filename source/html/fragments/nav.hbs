@@ -1,18 +1,26 @@
 {{#navigation}}
     
 	<ul class="mainnav">
-        {{#each main_nav}}
-            <li>
-        		<a href="{{link}}">{{title}}</a>
-            	{{#if sub_nav}}
-            		<ul class="subnav">
-            			{{#each sub_nav}}
-            				<li><a href="{{link}}">{{title}}</a></li>
-            			{{/each}}
-            		</ul>
-            	{{/if}}
+    {{#each main_nav}}
+        <li>
+    		  <a href="{{link}}">{{title}}</a>
+        	{{#if sub_nav}}
+        		<ul class="subnav">
+        			{{#each sub_nav}}
+        				<li><a href="{{link}}">{{title}}</a>
+                  {{#if sub_nav2}}
+                      <ul class="subnav">
+                          {{#each sub_nav2}}
+                            <li><a href="{{link}}">{{title}}</a>
+                          {{/each}}
+                      </ul>
+                  {{/if}}
+                </li>
+        			{{/each}}
+        		</ul>
+        	{{/if}}
 
-            </li>
-        {{/each}}
-    </ul>
+        </li>
+    {{/each}}
+  </ul>
 {{/navigation}}

@@ -32,48 +32,37 @@ $('body').removeClass('no-js').addClass('js-enabled');
 Modules
 --------------------
 */
-function mobileMenu(eventEl) {
-	eventEl.on('click', function() {
+
+
+function mobileMenu(triggerEl) {
+	triggerEl.on('click', function() {
 
 		$('.mainnav').addClass('mobile');
-		subMenus($('nav ul > li'));
 
-		/*if(!$('nav').hasClass('shown')) {
-			$('nav').addClass('shown');
-		}
-		else {
-			$('nav').removeClass('shown');
-		}*/
 		$('nav').toggleClass('active');
+
 		
-		//subNavClick($('.mobile > li'));
-		
 	});
 }
-function subMenus(eventEl) {
-	var targetEl;
-	eventEl.on('click', function() {
-		//$('.subnav').removeClass('active')
-		targetEl = $(this).children('.subnav');
 
-		if(targetEl.length > 0) {
-			targetEl.toggleClass('active');
+
+function mobileSubMenu(clickedMenuItem) {
+	var targetSubNav = "";
+	targetSubNav = clickedMenuItem.children('.subnav');
+	console.log(targetSubNav);
+		if(targetSubNav.length > 0 && $('.mainnav').hasClass('mobile')) {
+			if(targetSubNav.hasClass('active')) {
+				targetSubNav.removeClass('active');
+			}
+			else {
+				targetSubNav.addClass('active');
+			}
+
+
 		}
-	});
-
 }
-function subNavClick(clickEl) {
-	var targetEl;
-	clickEl.on('click', function() {
-		targetEl = $(this).children('.subnav');
 
-		if(targetEl.length > 0) {
-			targetEl.stop(true, true).slideToggle();
-		}
-	});
-	
-}
-function subNavHover(hoverEl) {
+function subNavHover(hoverEl) { // desktop/wide
 	var targetEl;
 		hoverEl.hover(
 			function(){
@@ -94,7 +83,7 @@ function subNavHover(hoverEl) {
 	
 }
 
-function subNavAdjust(el) {
+function subNavAdjust(el) { // desktop/wide
 	var targetEls = el.children('.subnav');
 	if(!$('.mainnav').hasClass('mobile')) {
 		targetEls.each(function() {
@@ -119,6 +108,9 @@ $(document).ready(function() {
 	subNavHover($('nav > ul > li'));
 	subNavAdjust($('nav > ul > li'));
 	mobileMenu($('.mobile-menu a'));
+	$('nav ul li').on('click', function(){
+		mobileSubMenu($(this));
+	});
 
 
 });
