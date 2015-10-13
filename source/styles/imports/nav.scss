@@ -6,8 +6,8 @@ nav {
 	border: 1px solid $company-color;
 	transition: transform 0.3s;
 	transform: translateX(-100%);
-	z-index: 33;
-	&.shown {
+	z-index: 3;
+	&.active {
 		transform: translateX(0);
 	}
 
@@ -40,14 +40,21 @@ nav {
 		
 		// sub navigation
 		.subnav {
-			display: none;
+			//display: none;
+			position: absolute;
 			background: #fff;
+			transform: translateX(-100%);
+			transition: transform 0.3s;
 			//position: absolute;
 			//z-index: 2;
 			//top: 54px;
 		    padding: 10px;
 		    border: 1px solid $company-color;
 		    //@include columns(2);
+		    z-index: 4;
+		    &.active {
+		    	transform: translateX(0);
+		    }
 			li {
 				display: block;
 				text-align: left;
