@@ -47,19 +47,21 @@ function mobileMenu(triggerEl) {
 
 
 function mobileSubMenu(clickedMenuItem) {
-	var targetSubNav = "";
-	targetSubNav = clickedMenuItem.children('.subnav');
-	console.log(targetSubNav);
-		if(targetSubNav.length > 0 && $('.mainnav').hasClass('mobile')) {
-			if(targetSubNav.hasClass('active')) {
-				targetSubNav.removeClass('active');
-			}
-			else {
-				targetSubNav.addClass('active');
-			}
+	var targetSubNav = clickedMenuItem.children('.subnav');
+	if(clickedMenuItem.parent().hasClass('mainnav')) {
+		$('nav ul').not(targetSubNav).removeClass('active');
+	}
 
-
+	if(targetSubNav.length > 0 && $('.mainnav').hasClass('mobile')) {
+		if(targetSubNav.hasClass('active')) {
+			targetSubNav.removeClass('active');
 		}
+		else {
+			targetSubNav.addClass('active');
+		}
+
+	}
+
 }
 
 function subNavHover(hoverEl) { // desktop/wide
@@ -108,7 +110,8 @@ $(document).ready(function() {
 	subNavHover($('nav > ul > li'));
 	subNavAdjust($('nav > ul > li'));
 	mobileMenu($('.mobile-menu a'));
-	$('nav ul li').on('click', function(){
+	$('nav ul li').on('click', function(event){
+		event.stopPropagation();
 		mobileSubMenu($(this));
 	});
 
