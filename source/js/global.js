@@ -41,6 +41,13 @@ function mobileMenu(triggerEl) {
 
 		$('nav').toggleClass('active');
 
+		$('.mainnav > li').each(function() {
+			if($(this).children('.subnav').length > 0) {
+			console.log('subnavs: ' + $(this).children('.subnav').length + '<br>');
+				$(this).addClass('has-subs');
+			}
+		});
+
 		
 	});
 }
@@ -53,13 +60,14 @@ function mobileSubMenu(clickedMenuItem) {
 	}
 
 	if(targetSubNav.length > 0 && $('.mainnav').hasClass('mobile')) {
-		if(targetSubNav.hasClass('active')) {
+		/*if(targetSubNav.hasClass('active')) {
 			targetSubNav.removeClass('active');
 		}
 		else {
 			targetSubNav.addClass('active');
-		}
-
+		}*/
+		targetSubNav.toggleClass('active');
+		targetSubNav.children('li').addClass('has-subs');
 	}
 
 }
