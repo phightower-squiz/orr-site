@@ -35,40 +35,38 @@ Modules
 
 
 function mobileMenu(triggerEl) {
-	triggerEl.on('click', function() {
-
+	triggerEl.on('click', function(event) {
+		event.stopPropagation();
 		$('.mainnav').addClass('mobile');
 
 		$('nav').toggleClass('active');
 
-		$('.mainnav > li').each(function() {
-			if($(this).children('.subnav').length > 0) {
-			console.log('subnavs: ' + $(this).children('.subnav').length + '<br>');
-				$(this).addClass('has-subs');
-			}
-		});
+		addNavMoreArrow($('.mainnav'));
 
-		
 	});
 }
 
-
-function mobileSubMenu(clickedMenuItem) {
-	var targetSubNav = clickedMenuItem.children('.subnav');
-	if(clickedMenuItem.parent().hasClass('mainnav')) {
-		$('nav ul').not(targetSubNav).removeClass('active');
-	}
-
-	if(targetSubNav.length > 0 && $('.mainnav').hasClass('mobile')) {
-		/*if(targetSubNav.hasClass('active')) {
-			targetSubNav.removeClass('active');
+function addNavMoreArrow(el) {
+	var itemsArray = el.children('li');
+	itemsArray.each(function() {
+		if($(this).children('.subnav').length > 0) {
+			$(this).append('<i class="fa fa-plus-circle"></i>');
 		}
-		else {
-			targetSubNav.addClass('active');
-		}*/
-		targetSubNav.toggleClass('active');
-		targetSubNav.children('li').addClass('has-subs');
+	});
+}
+function mobileSubMenu(clickedMenuItem) {
+	if($('.mainnav').hasClass('mobile')) {
+		var targetSubNav = clickedMenuItem.children('.subnav');
+			if(clickedMenuItem.parent().hasClass('mainnav')) {
+				$('nav ul').not(targetSubNav).removeClass('active');
+			}
+
+			if(targetSubNav.length > 0 && $('.mainnav').hasClass('mobile')) {
+				targetSubNav.toggleClass('active');
+				addNavMoreArrow(targetSubNav);
+			}
 	}
+	
 
 }
 
@@ -114,7 +112,7 @@ function subNavAdjust(el) { // desktop/wide
 	
 }
 $(document).ready(function() {
-
+	// nav functions
 	subNavHover($('nav > ul > li'));
 	subNavAdjust($('nav > ul > li'));
 	mobileMenu($('.mobile-menu a'));
@@ -125,6 +123,7 @@ $(document).ready(function() {
 
 
 });
+// initiate sliders
 $(window).load(function(){
 	$('.main-slider').slick({
 		slidesToShow: 1,

@@ -1,23 +1,16 @@
 .content-wrapper {
 	background: $content-wrapper-background-color;
-	div[class*='grid'] {
-		//margin: 0 !important;
-		background: $content-block-background-color;
-		&.nav-wrapper {
-			margin: 0;
-		}
-		&.main-wrapper {
-			margin-left: 3%;
-		}
-		&.related-wrapper {
-			margin: 0;
-			float: right;
-		}
-	}
+
 	.content-block {
-		padding: 20px;
-		&.sidenav {
-			padding: 0;
+		padding: 1em;
+		background: $content-block-background-color;
+		margin: 0 1em;
+		h1 {
+			color: $secondary-color;
 		}
+
+	}
+	.related-wrapper {
+		margin-bottom: 0.5em;
 	}
 }

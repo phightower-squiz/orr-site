@@ -20,7 +20,7 @@ nav {
 
 		li {
 			//display: inline-block;
-			//position: relative;
+			position: relative;
 			border-bottom: 1px dotted $company-color;
 
 			a {
@@ -35,37 +35,37 @@ nav {
 					color: $main-nav-hover-color;
 				}
 			}
-			&.has-subs {
-				&:after {
-					content: '>';
-					top: 0;
-					//bottom: 0;
-					//left: 0;
-					right: 5px;
-					position: absolute;
-					z-index: 3;
-					width: 30px;
-					color: #000;
+			.fa-plus-circle {
+				position: absolute;
+				right: 5px;
+				top: 35%;
+				color: $company-color;
 
-
+			}
+			&:hover {
+				.fa-plus-circle {
+					color: darken($company-color,15%);
 				}
+			}
+			&:last-child {
+				border-bottom: none;
 			}
 
 		}
 		
 		// sub navigation
 		.subnav {
-			//display: none;
+
 			position: absolute;
 			background: #fff;
-			transform: translateX(-100%);
+			transform: translateX(-101%);
 			transition: transform 0.3s;
-			//position: absolute;
-			//z-index: 2;
-			//top: 54px;
-		    padding: 10px;
+			margin: 0;
+			padding-left: 0;
 		    border: 1px solid $company-color;
-		    //@include columns(2);
+		    border-left: 1px solid #fff;
+		    box-shadow: 3px 2px 0 rgba(0,0,0,0.1);
+
 		    z-index: 4;
 		    &.active {
 		    	transform: translateX(0);
@@ -80,21 +80,21 @@ nav {
 					position: relative;
 					display: block;
 					&:hover {
-						background: none;
-						color: $sub-nav-hover-color;
+						//background: none;
+						//color: $sub-nav-hover-color;
 					}
 					
 				}
 				&::before {
 					// border on left
-					@include pseudo-border(10px,0,0,0,4px,40px,$sub-nav-color);
+					//@include pseudo-border(10px,0,0,0,4px,40px,$sub-nav-color);
 
 				}
 				&:hover {
 
 					// border on left
 					&::before {
-						@include pseudo-border(10px,0,0,0,4px,40px,$sub-nav-hover-color);
+						//@include pseudo-border(10px,0,0,0,4px,40px,$sub-nav-hover-color);
 
 					}
 				}
@@ -105,9 +105,12 @@ nav {
 
 }
 
-// Side navigation 
-
+// Side navigation inner pages
+.nav-wrapper {
+	display: none;
+}
 .sidenav {
+	display: none;
 	.top-nav-title {
 
 	}
