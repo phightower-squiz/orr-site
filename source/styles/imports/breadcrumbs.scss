@@ -9,6 +9,7 @@
 			&::after {
 				content: ' / ';
 			}
+			
 			&:last-child {
 				&::after {
 					content: '';

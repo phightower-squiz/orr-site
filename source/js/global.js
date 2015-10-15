@@ -41,12 +41,12 @@ function mobileMenu(triggerEl) {
 
 		$('nav').toggleClass('active');
 
-		addNavMoreArrow($('.mainnav'));
+		addNavMoreIcon($('.mainnav'));
 
 	});
 }
 
-function addNavMoreArrow(el) {
+function addNavMoreIcon(el) {
 	var itemsArray = el.children('li');
 	itemsArray.each(function() {
 		if($(this).children('.subnav').length > 0) {

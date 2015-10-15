@@ -1,7 +1,7 @@
 // Base font
 $base-font-scale: 1;  // The font scale multiplier (e.g. 2 = 32px/2em/2rem)
 $base-font-pixel: 16; // Used for font size calculations & conversions
-$base-font-colour: #222;
+$base-font-colour: #4e4d4d;
 $base-font-family: 'Lato', sans-serif;
 
 // Selection highlighting
@@ -10,10 +10,10 @@ $content-selection-highlight: #b3d4fc;
 // Colors
 $company-color: #5897bc;
 $secondary-color: #6662a5; // purple
-$main-nav-color: #000;
+$main-nav-color: #2a2a2a;
 $main-nav-hover-color: #fff;
 $sub-nav-color: #6662a5;
-$sub-nav-hover-color: #000;
+$sub-nav-hover-color: #2a2a2a;
 $accent-color: #b20838;
 $content-wrapper-background-color: #e6e5e5;
 $content-block-background-color: #fff;
