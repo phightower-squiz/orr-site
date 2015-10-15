@@ -3,14 +3,16 @@ h1, h2, h3 {
 }
 h1 {
 	color: darken($company-color,10%);
-	font-size: 1.5em;
+	font-size: 1.7em;
 	margin-top: 0;
 }
 h2 {
+	font-size: 1.5em;
 	color: #000;
 	margin-top: 0;
 }
 h3 {
+	font-size: 1.25em;
 	color: #000;
 	margin-top: 0;
 }
@@ -19,5 +21,30 @@ a {
 	text-decoration: none;
 	&:hover {
 		color: $main-link-hover-color;
+	}
+	&.icon-link {
+		position: relative;
+		display: inline-block;
+		margin-right: 20px;
+		&:after {
+			content: '';
+			height: 16px;
+			width: 17px;
+			position: absolute;
+			right: -20px;
+			top: 2px;
+			z-index: 2;
+
+		}
+		&.pdf-link {
+			&:after {
+				background: url('../mysource_files/link-sprites.png') no-repeat 0 0;
+			}
+		}
+		&.ext-link {
+			&:after {
+				background: url('../mysource_files/link-sprites.png') no-repeat -17px 0;
+			}
+		}
 	}
 }

@@ -1,12 +1,48 @@
 .content-wrapper {
 	background: $content-wrapper-background-color;
-
+	@extend %clearfix;
+	ul {
+		list-style: none;
+		padding: 0;
+		li {
+			padding: 0;
+			&:before {
+				content: '\2022';
+			}
+		}
+	}
 	.content-block {
 		padding: 1em;
 		background: $content-block-background-color;
 		margin: 0 1em;
-		h1 {
+		h1, h2, h3 {
 			color: $secondary-color;
+			font-weight: normal;
+		}
+		&.image-content {
+			padding: 0;
+			line-height: 0;
+		}
+
+	}
+	// icons
+	.icon-block {
+		@extend %clearfix;
+		.icon-div {
+			width: 25%;
+			text-align: center;
+			float: left;
+			margin: 1em 0;
+			.fa {
+				color: $company-color;
+				font-size: 2em;
+			}
+			span {
+				display: block;
+				text-align: center;
+				text-transform: uppercase;
+				font-size: 0.8em;
+			}
 		}
 
 	}
