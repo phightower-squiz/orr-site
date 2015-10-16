@@ -1,0 +1,30 @@
+.accordion {
+	border-top: 4px solid lighten($company-color, 20%);
+	border-bottom: 4px solid lighten($company-color, 20%);
+	margin: 0.5em 0;
+	padding: 0 1em;
+
+	.uber-accordion__target {
+		display: none;
+	}
+	.uber-accordion__target-active {
+		display: block;
+	}
+	> span {
+		display: block;
+		padding: 0.5em 0;
+		.accordion__link {
+			i {
+				margin-left: 8px;
+				@include sq-transition(transform 0.1s ease);
+			}
+			&.uber-accordion__button-active {
+				i {
+					@include sq-transform(rotate(90deg));
+					transform-origin: 30% 50% 0;
+				}
+			}
+		}
+	}
+
+}
