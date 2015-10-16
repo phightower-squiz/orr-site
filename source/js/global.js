@@ -121,6 +121,10 @@ $(document).ready(function() {
 		mobileSubMenu($(this));
 	});
 
+	$('.accordion').UberAccordion({
+    buttonClass: 'accordion__link'
+});
+
 
 });
 // initiate sliders

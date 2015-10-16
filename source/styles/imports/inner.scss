@@ -4,18 +4,22 @@
 	
 	.content-block {
 		@extend %clearfix;
-		padding: 1em;
 		background: $content-block-background-color;
 		margin: 0 1em;
+		&.padded {
+			padding: 1em;
+		}
+		&.no-padding {
+			padding: 0;
+		}
 		h1, h2, h3 {
 			color: $secondary-color;
 			font-weight: normal;
 		}
 		&.image-content {
-			padding: 0;
 			line-height: 0;
 		}
-		ul {
+		ul.normal {
 			list-style: none;
 			padding: 0;
 			display: table;
@@ -35,10 +39,15 @@
 		aside {
 			float: right;
 			font-size: 0.9em;
-			color: $secondary-color;
-			width: 70%;
-			padding: 5px 25px;
-			background: url('../mysource_files/quote-left.png') top left no-repeat, url('../mysource_files/quote-right.png') bottom right no-repeat;
+			width: 75%;
+			padding: 5px 35px;
+			background: url('../mysource_files/quote-left.png') top 20px left 0 no-repeat, url('../mysource_files/quote-right.png') bottom 60px right 0 no-repeat;
+			.quote {
+				color: $secondary-color;
+			}
+			.note {
+				color: $company-color;
+			}
 		}
 
 	}
@@ -63,7 +72,160 @@
 		}
 
 	}
+	
+	// item listing with links to download
+	ul.item-list {
+		margin: 0;
+		list-style: none;
+		padding: 0.5em 0;
+		li {
+			&:before {
+				content: '';
+				padding: 0;
+			}
+		}
+	}
+	
+	.item-desc {
+		span {
+			display: inline-block;
+			color: $base-font-colour;
+			font-size: 0.8em;
+			&.item-type {
+				margin-right: 1em;
+				height: 16px;
+				width: 17px;
+				&.pdf {
+					background: url('../mysource_files/link-sprites.png') no-repeat 0 0;
+				}
+			}
+			&.item-date {
+				margin-right: 0.5em;
+			}
+		}
+	}
+
+	// global table layout
+	.table-wrapper {
+		margin: 1em 0;
+	}
+	.table-head {
+		padding: 0.5em;
+		color: #fff;
+		width: 100%;
+	}
+	.table-contents {
+		display: table;
+		border-collapse: collapse;
+		width: 100%;
+
+		.table-row {
+			@extend %clearfix;
+			display: table-row;
+			&:nth-child(odd) {
+				background: lighten($secondary-color, 40%);
+			}
+			.table-cell {
+				padding: 0.5em;
+				color: $table-text-color;
+				display: table-cell;
+				font-size: 0.9em;
+				&.col-3 {
+					width: 33%;
+					//float: left;
+					&:nth-of-type(3) {
+						border-right: none;
+					}
+
+				}
+			}
+		}
+	}
+	
+	
+	// specific tables
+	.table-wrapper {
+		
+		&.type1 {
+			.table-head {
+				background: $table-heading1;
+			}
+			.table-cell {
+				border-right: 4px solid $table-heading1;
+
+			}
+		}
+		&.type2 {
+			.table-head {
+				background: $table-heading2;
+			}
+			.table-cell {
+				border-right: 4px solid $table-heading2;
+
+			}
+		}
+		&.type3 {
+			.table-head {
+				background: $table-heading3;
+			}
+			.table-cell {
+				border-right: 4px solid $table-heading3;
+
+			}
+		}
+	}
+
+// bio section 
+	.bio-content {
+		border-bottom: 4px solid lighten($company-color, 20%);
+	}
+	.bio-wrapper {
+		@extend %clearfix;
+		
+		padding: 1em;
+		.bio-img {
+
+			text-align: center;
+			img {
+				max-width: 100%;
+			}
+		}
+		.bio-info {
+
+			h3 {
+				text-align: center;
+			}
+		}
+
+	}
+
+	// Timestamp
+
+	.timestamp {
+		padding: 1em;
+		color: $company-color;
+		border-bottom: 4px solid lighten($company-color, 20%);
+	}
+
+	// next previous page
+
+	.next-prev {
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			li {
+				display: inline-block;
+				padding: 0 0.5em;
+			}
+		}
+	}
+
+	// related items column
 	.related-wrapper {
 		margin-bottom: 0.5em;
 	}
+
+
 }
