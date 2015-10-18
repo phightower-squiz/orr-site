@@ -1,8 +1,12 @@
 footer {
 	@extend %clearfix;
+	border-top: 1px solid darken($content-wrapper-background-color, 10%);
 	background: $footer-background-color;
 	.container.footer {
 		@extend %clearfix;
+	}
+	.container.pdf-download {
+		display: none;
 	}
 	h2 {
 		font-size: 1em;
@@ -14,7 +18,7 @@ footer {
 		&.grid-social {
 			width: 100%;
 			display: block;
-			padding: 10px;
+			padding: 1em;
 		}
 	}
 

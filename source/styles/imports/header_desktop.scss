@@ -1,6 +1,8 @@
 header {
 	@extend %clearfix;
 	@include outer-container();
+	text-align: left;
+	margin: 0 auto;
 	.mobile-menu {
 		display: none;
 	}
@@ -12,16 +14,11 @@ header {
 		width: 100%;
 		margin-top: 1em;
 		padding: 0.25em;
-		border: 1px solid darken($company-color,10%);
-		background: url('../mysource_files/mag.png') no-repeat 97% 10px;
+		
 		input {
-			border: none;
 			width: 90%;
-			height: 20px;
-			
-			padding: 5px;
-			outline: none;
+
 		}
 	}
-	
+
 }

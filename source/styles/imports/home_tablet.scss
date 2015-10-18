@@ -1,0 +1,20 @@
+.container {
+	&.top {
+		.latest-news {
+			margin-bottom: 1em;
+		}
+	}
+	&.middle {
+
+		> div {
+			@extend %clearfix;
+			img {
+				width: 40%;
+				float: right;
+			}
+			article {
+				float: left;
+			} 
+		}
+	}
+}

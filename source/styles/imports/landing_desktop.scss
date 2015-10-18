@@ -1,0 +1,41 @@
+.content-wrapper {
+	.landing-header {
+		.content-block {
+			@extend %clearfix;
+			.landing-content {
+				@extend %clearfix;
+				img {
+					&.landing {
+						width: 50%;
+						//max-height: 250px;
+						float: right;
+						padding: 0.5em 0 1em 0.5em;
+					}
+				}
+			}
+			
+			.featured-content {
+				//clear: both;
+				width: 48%;
+				//margin-right: 2%;
+				float: left;
+				&:last-child {
+					float: right;
+				}
+			}
+		}
+	}
+	.category-row {
+		margin: 0;
+		.category-block {
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	
+	
+}

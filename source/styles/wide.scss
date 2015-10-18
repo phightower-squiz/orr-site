@@ -35,6 +35,9 @@ $grid-columns: 12;
     width: 100%;
 
 }
+body {
+	//color: blue;
+}
 /*
 --------------------
 Modules
@@ -42,7 +45,11 @@ Modules
 */
 
 @import "header_desktop.scss";
+@import "nav_desktop.scss";
 @import "footer_desktop.scss";
 @import "home_desktop.scss";
 @import "inner_desktop.scss";
-@import "nav_desktop.scss";
+@import "landing_desktop.scss";
+@import "breadcrumbs_desktop.scss";
+
+

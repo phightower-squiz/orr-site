@@ -1,8 +1,6 @@
 
 .container {
-	div[class*='grid-'] {
-		//padding: 0;
-	}
+
 	&.top {
 
 		.grid-8 {
@@ -100,7 +98,7 @@
 /* latest news */
 
 .latest-news {
-	min-height: 339px;
+
 	background: $latest-news-color;
 	color: #fff;
 	padding: 20px;

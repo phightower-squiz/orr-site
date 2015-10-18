@@ -1,18 +1,31 @@
 footer {
 
 	background: $footer-background-color;
+	.container {
+		padding: 1em;
+		margin-bottom: 0;
+		&.pdf-download {
+			display: block;
+		}
+	}
 	h2 {
 		font-size: 1em;
 		font-weight: bold;
 		color: $footer-heading-color;
 	}
 	.grid-footer {
+		display: block;
 		float: left;
-		width: 17.5%;
+		width: 17%;
 		margin: 0 1%;
+		&:first-child {
+			margin-left: 0;
+		}
 		&.grid-social {
-			width: 20%;
+			width: 23%;
 			float: right; 
+			padding: 0;
+			margin-right: 0;
 		}
 	}
 
@@ -23,6 +36,7 @@ footer {
 		li {
 			&.social {
 				display: inline-block;
+				margin-right: 3px;
 				.social-icon {
 					height: 30px;
 					width: 40px;
@@ -57,9 +71,14 @@ footer {
 		color: #fff;
 		font-size: 0.85em;
 		padding: 10px 0;
+		text-align: left;
 		@extend %clearfix;
+		.container {
+			padding: 0;
+		}
 		.license {
 			text-align: right;
+			font-size: 0.9em;
 			img {
 				margin-right: 10px;
 			}

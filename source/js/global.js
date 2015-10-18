@@ -63,7 +63,7 @@ function mobileSubMenu(clickedMenuItem) {
 
 			if(targetSubNav.length > 0 && $('.mainnav').hasClass('mobile')) {
 				targetSubNav.toggleClass('active');
-				addNavMoreArrow(targetSubNav);
+				addNavMoreIcon(targetSubNav);
 			}
 	}
 	
@@ -104,7 +104,7 @@ function subNavAdjust(el) { // desktop/wide
 
 			if(subNavPosLeft + subNavWidth > winWidth) {
 				var diff = (subNavPosLeft + subNavWidth) - winWidth;
-				$(this).css('left', (subNavPosLeft - diff) + 'px');
+				$(this).css('left', (subNavPosLeft - (diff + 25)) + 'px');
 			}
 
 		});
@@ -123,10 +123,22 @@ $(document).ready(function() {
 
 	$('.accordion').UberAccordion({
     buttonClass: 'accordion__link'
-});
+	});
+	// just for testing 
+	$('.sidenav > .subnav > li:first-child > a').addClass('active');
+	
 
-
 });
+/*$( window ).resize(function() {
+	// nav functions
+	subNavHover($('nav > ul > li'));
+	subNavAdjust($('nav > ul > li'));
+	mobileMenu($('.mobile-menu a'));
+	$('nav ul li').on('click', function(event){
+		event.stopPropagation();
+		mobileSubMenu($(this));
+	});
+});*/
 // initiate sliders
 $(window).load(function(){
 	$('.main-slider').slick({

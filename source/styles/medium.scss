@@ -19,6 +19,7 @@
 Modules
 --------------------
 */
-body {
-	color: red;
-}
+@import "nav_tablet.scss";
+@import "home_tablet.scss";
+@import "inner_tablet.scss";
+@import "landing_tablet.scss";

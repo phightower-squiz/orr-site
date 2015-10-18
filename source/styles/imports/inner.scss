@@ -1,23 +1,31 @@
 .content-wrapper {
 	background: $content-wrapper-background-color;
 	@extend %clearfix;
-	
+	border-top: 1px solid darken($content-wrapper-background-color, 10%);
 	.content-block {
 		@extend %clearfix;
 		background: $content-block-background-color;
+		border-right: 1px solid darken($content-wrapper-background-color, 10%);
+		border-left: 1px solid darken($content-wrapper-background-color, 10%);
 		margin: 0 1em;
+		&:first-child {
+			border-top: 1px solid darken($content-wrapper-background-color, 10%);
+		}
+		&:last-child {
+			border-bottom: 1px solid darken($content-wrapper-background-color, 10%);
+		}
 		&.padded {
 			padding: 1em;
 		}
 		&.no-padding {
 			padding: 0;
 		}
+		img {
+			display: block;
+		}
 		h1, h2, h3 {
 			color: $secondary-color;
 			font-weight: normal;
-		}
-		&.image-content {
-			line-height: 0;
 		}
 		ul.normal {
 			list-style: none;
@@ -224,7 +232,25 @@
 
 	// related items column
 	.related-wrapper {
-		margin-bottom: 0.5em;
+		.related-content {
+			border: 1px solid darken($content-wrapper-background-color, 10%);
+			margin-bottom: 1em;
+			h3 {
+				color: #000;
+				font-size: 1.2em;
+				i {
+					display: inline-block;
+					color: $company-color;
+					font-size: 2em;
+					margin-right: 0.2em;
+					vertical-align: middle;
+				}
+			}
+			ul {
+				list-style: none;
+				padding: 0;
+			}
+		}
 	}
 
 

@@ -3,9 +3,15 @@
 
 	
 }
+.content-wrapper {
+	&.homepage {
+		border-top: none;
+		background: #fff;
+	}
+}
 .container {
 	&.top {
-
+		margin-bottom: 0;
 		.grid-8 {
 
 			position: relative;
@@ -17,10 +23,15 @@
 				z-index: 1;
 				background: rgba(255,255,255,0.90);
 				width: 60%;
+				height: auto;
+				@extend %clearfix;
 				a {
 					text-decoration: none;
 					color: darken($company-color,10%);
 					float: left;
+				}
+				.home-about {
+					display: block;
 				}
 				.slider-nav {
 					float: right;
@@ -73,60 +84,41 @@
 /* latest news */
 
 .latest-news {
-	min-height: 339px;
-	background: $latest-news-color;
-	color: #fff;
-	padding: 20px;
-	h1 {
-		font-size: 1.3em;
-		color: #fff;
-		margin-bottom: 1em;
-	}
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		li {
-			margin-bottom: 30px;
-			@extend %clearfix;
-			.date {
-				height: 50px;
-				width: 50px;
-				float: left;
-				span {
-					display: block;
-					text-align: center;
-				}
-				.day {
-					width: 100%;
-					height: 30px;
-					background: darken($latest-news-color, 30%);
-					color: #fff;
-					line-height: 1.7;
-				}
-				.month {
-					width: 100%;
-					height: 20px;
-					background: #fff;
-					color: darken($latest-news-color, 30%);
-					line-height: 1.1;
-				}
-			}
-			.headline {
-				margin-left: 70px;
-			}
-		}
-	}
-	
+	min-height: 334px;
+
 }
+/*@media screen and (max-width: 1180px) {
+		.carousel {
+			width: 100%;
+			margin-bottom: 1em;
+			margin: 0 0 1em 0;
+		}
+    .latest-news {
+    	width: 100%;
+    	margin: 0;
+    }
+    .container {
+    	&.middle {
+    		padding: 0 !important;
+    	}
+    	&.top {
+    		margin-bottom: 0;
+    	}
+    }
+}*/
+
+
 /* middle section */
 .container {
 	&.middle {
-		img {
-			width: 100%;
-		}
+		
 		div[class*='spotlight'] {
 			height: 410px;
+			
+			img {
+				width: 100%;
+				float: none;
+			}
 		}
 		.spotlight1 {
 			background: $spotlight1-color;
@@ -140,6 +132,7 @@
 		article {
 			color: #fff;
 			padding: 20px;
+			float: none;
 			h1 {
 				font-size: 1.3em;
 				color: #fff;
@@ -153,7 +146,17 @@
 	&.bottom {
 		background: lighten(#000,80%);
 		text-align: center;
-		padding: 20px 0;
+		padding: 0;
+		.twitter-block {
+			padding: 0 0.5em;
+			margin-bottom: 0;
+			.slick-next {
+				right: 0.4em !important;
+			}
+			.slick-prev {
+				left: 0.4em;
+			}
+		}
 		.twitter-feed {
 			width: 30%;
 			margin: 1%;
@@ -161,9 +164,8 @@
 			background: #fff;
 			padding: 0.5em;
 			float: left;
-			&:last-child {
-				//margin-right: 0;
-			}
+
+			
 		}
 	}
 }

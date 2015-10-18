@@ -1,6 +1,16 @@
 .content-wrapper {
 	background: $content-wrapper-background-color;
-	div[class*='grid'] {
+	.container {
+		padding: 0 0.5em;
+		.content-block {
+			margin: 0;
+			&.related-content {
+				margin-bottom: 1em;
+			}
+		}
+	}
+	
+	/*div[class*='grid'] {
 		//margin: 0 !important;
 		background: $content-block-background-color;
 		&.nav-wrapper {
@@ -19,5 +29,5 @@
 		&.sidenav {
 			padding: 0;
 		}
-	}
+	}*/
 }

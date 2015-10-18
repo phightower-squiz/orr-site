@@ -83,10 +83,6 @@ img {
 }
 // Main content container
 
-.main {
-    //@include outer-container();
-    
-}
 
 // Reset fonts for relevant elements (taken from bootstrap)
 input,
@@ -134,6 +130,7 @@ Modules
     @import "accordion.scss";
     @import "home.scss";
     @import "inner.scss";
+    @import "landing.scss";
     @import "footer.scss";
 
 /*
