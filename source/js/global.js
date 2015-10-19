@@ -135,7 +135,10 @@ function setMenuFunctions() {
 	mobileMenu($('.mobile-menu a'));
 	$('nav ul li').on('click', function(event){
 		event.stopPropagation();
-		event.preventDefault();
+		if($(this).parent().hasClass('mobile')) {
+			event.preventDefault();
+		}
+		
 		mobileSubMenu($(this));
 	});
 }
