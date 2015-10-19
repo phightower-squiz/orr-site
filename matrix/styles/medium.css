@@ -1,0 +1,52 @@
+/**
+ * version: 0.0.1
+ * file:    medium.css
+ * author:  Squiz Australia
+ * updated: 19-10-2015 13:08
+ *
+ * Table of Contents
+ *
+ * - Modules
+
+ */
+/* pch mixins */
+.container.middle > div {
+    *zoom: 1;
+}
+
+.container.middle > div:before,
+  .container.middle > div:after {
+    content: '';
+    display: table;
+    line-height: 0;
+}
+
+.container.middle > div:after {
+    clear: both;
+}
+
+/*
+--------------------
+Modules
+--------------------
+*/
+nav {
+    width: 50%;
+}
+
+.container.top .latest-news {
+    margin-bottom: 1em;
+}
+
+.container.middle > div img {
+    width: 40%;
+    float: right;
+}
+
+.container.middle > div article {
+    float: left;
+}
+
+.content-wrapper .content-block img.landing {
+    width: 100%;
+}

@@ -1,13 +1,13 @@
 /*global jQuery*/
 /**
- * {{name}}
+ * orr-site
  * Global JS
  *
- * version: {{version}}
- * file:    {{file}}
+ * version: 0.0.1
+ * file:    global.js
  * author:  Squiz Australia
  * change log:
- *     {{date}} - First revision
+ *     19-10-2015 13:08 - First revision
  */
 
 /*
@@ -15,7 +15,7 @@
  *
  * - Global
  * - Modules
-{{toc}}
+
  */
 
 /*
@@ -135,7 +135,6 @@ function setMenuFunctions() {
 	mobileMenu($('.mobile-menu a'));
 	$('nav ul li').on('click', function(event){
 		event.stopPropagation();
-		event.preventDefault();
 		mobileSubMenu($(this));
 	});
 }
