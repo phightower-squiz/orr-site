@@ -3,6 +3,7 @@ nav {
 	border-top: 6px solid $company-color;
 	border-bottom: none;
 	border-right: none;
+	border-left: none;
 	position: relative;
 	top: 0;
 	transform: none;
@@ -105,7 +106,7 @@ nav {
 	// level 2
 	ul {
 		list-style-type: none;
-		padding: 0.7em;
+		padding: 0.7em 0.7em 0 0.7em;
 		li {
 			position: relative;
 			display: block;

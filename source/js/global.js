@@ -40,7 +40,7 @@ function mobileMenu(triggerEl) {
 		$('.mainnav').addClass('mobile');
 
 		$('nav').toggleClass('active');
-		$('.subnav').css('display','block').removeClass('active').removeAttr('style');
+		$('.subnav').css('display','block').removeClass('active');
 		/*if($('nav').hasClass('active')) {
 			$('nav').removeClass('active');
 		}
@@ -111,7 +111,7 @@ function subNavHover(hoverEl) { // desktop/wide
 function subNavAdjust(el) { // desktop/wide
 	var targetEls = el.children('.subnav');
 	if(!$('.mainnav').hasClass('mobile')) {
-		$('.subnav').css('display','none');
+		$('.mainnav .subnav').css('display','none');
 		targetEls.each(function() {
 
 			// adjust position if over edge of window

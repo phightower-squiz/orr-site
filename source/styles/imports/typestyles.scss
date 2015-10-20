@@ -35,12 +35,12 @@ a {
 		}
 		&.pdf-link {
 			&:after {
-				background: url('../mysource_files/link-sprites.png') no-repeat 0 0;
+				background: url('mysource_files/link-sprites.png') no-repeat 0 0;
 			}
 		}
 		&.ext-link {
 			&:after {
-				background: url('../mysource_files/link-sprites.png') no-repeat -17px 0;
+				background: url('mysource_files/link-sprites.png') no-repeat -17px 0;
 			}
 		}
 	}
