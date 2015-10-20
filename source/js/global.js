@@ -111,7 +111,7 @@ function subNavHover(hoverEl) { // desktop/wide
 function subNavAdjust(el) { // desktop/wide
 	var targetEls = el.children('.subnav');
 	if(!$('.mainnav').hasClass('mobile')) {
-		$('.mainnav .subnav').css('display','none');
+		$('.mainnav').children('.subnav').css('display','none');
 		targetEls.each(function() {
 
 			// adjust position if over edge of window

@@ -133,28 +133,43 @@
 			<!-- main body -->
       <div class="container-fluid content-wrapper <mySource_PRINT var='asset_name^lowercase' />">
 				<div class="container">
- 
+ 					
 
  				<!-- side nav for inner pages -->
  					<MySource_AREA id_name="side_menu" design_area="menu_normal">
               <MySource_SET name="level" value="sub" />
+              <MySource_SET name="settings.class.current" value="active" />
+              <MySource_SET name="settings.class.normal" value="" />
 
               		<div class="grid-3 nav-wrapper">
 										<div class="content-block sidenav">
-											<div class="top-nav-title"> <mySource_PRINT var='asset_name' /></div>
+											<div class="top-nav-title"> 
+												ldjldskjfk
+											</div>
 												<ul>
 													<MySource_ASSET>
-														<li><MySource_PRINT var="asset_name_linked" />
+														<li><a href="<MySource_PRINT var='asset_link' />" class="<MySource_PRINT var='settings.class' />">
+																	<MySource_PRINT var="asset_short_name" />
+   																	</a>
 
 			                      	<MySource_SUB id_name="side_menu1" design_area="menu_normal"><!-- Level 2 -->
 			                      		<MySource_SET name="show_subs" value="always" />
+			                      		<MySource_SET name="settings.class.current" value="active" />
+              									<MySource_SET name="settings.class.normal" value="" />
 				                          <ul class="subnav">
 				                          	<MySource_ASSET>
-				                            	<li><MySource_PRINT var="asset_name_linked" />
+				                            	<li><a href="<MySource_PRINT var='asset_link' />" class="<MySource_PRINT var='settings.class' />">
+																						<MySource_PRINT var="asset_short_name" />
+					   																	</a>
 				                                <MySource_SUB id_name="side_menu2" design_area="menu_normal"><!-- Level 3 -->
+				                                <MySource_SET name="show_subs" value="always" />
+							                      		<MySource_SET name="settings.class.current" value="active" />
+				              									<MySource_SET name="settings.class.normal" value="" />
 				                                  <ul class="subnav">
 				                                    <MySource_ASSET>
-				                                      <li><MySource_PRINT var="asset_name_linked" />
+				                                      <li><a href="<MySource_PRINT var='asset_link' />" class="<MySource_PRINT var='settings.class' />">
+																										<MySource_PRINT var="asset_short_name" />
+									   																	</a>
 
 				                                        </li>
 				                                     </MySource_ASSET>
