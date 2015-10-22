@@ -46,10 +46,10 @@
 				}
 			}
 		}
-		aside {
+		blockquote {
 			float: right;
 			font-size: 0.9em;
-			width: 75%;
+			width: 75% !important;
 			padding: 5px 35px;
 			background: url('mysource_files/quote-left.png') top 20px left 0 no-repeat, url('mysource_files/quote-right.png') bottom 60px right 0 no-repeat;
 			.quote {

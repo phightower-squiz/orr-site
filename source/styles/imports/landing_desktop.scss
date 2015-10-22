@@ -10,6 +10,7 @@
 						//max-height: 250px;
 						float: right;
 						padding: 0.5em 0 1em 0.5em;
+						margin-top: -4em;
 					}
 				}
 			}
@@ -17,7 +18,7 @@
 			.featured-content {
 				//clear: both;
 				width: 48%;
-				//margin-right: 2%;
+				height: 175px;
 				float: left;
 				&:last-child {
 					float: right;
@@ -25,7 +26,7 @@
 			}
 		}
 	}
-	.category-row {
+	.category-wrapper {
 		margin: 0;
 		.category-block {
 			&:first-child {

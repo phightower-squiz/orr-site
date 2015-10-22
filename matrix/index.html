@@ -44,7 +44,7 @@
     <header class="header" role="banner">
         
     <div class="grid-8">
-        <a href="index.html"><img src="mysource_files/logo-orr.png"  alt="ORR logo" class="logo"></a>
+        <a href="<MySource_PRINT id_name='__global__' var='site_link' />"><img src="mysource_files/logo-orr.png"  alt="ORR logo" class="logo"></a>
     </div>
     <div class="grid-4">
         <div class="mobile-menu" role="button">
@@ -115,7 +115,7 @@
 		  <MySource_SET name="prefix_with_divider" value="false" />
 		  <MySource_SET name="suffix_with_divider" value="false" />
 		  <MySource_DIVIDER></MySource_DIVIDER>
-				<div class="container-fluid content-wrapper breadcrumbs-wrapper">
+				<div class="container-fluid content-wrapper breadcrumb-wrapper">
     			<div class="container breadcrumbs">
 				  	<ul>
 						  <MySource_ASSET>
@@ -144,7 +144,7 @@
               		<div class="grid-3 nav-wrapper">
 										<div class="content-block sidenav">
 											<div class="top-nav-title"> 
-												ldjldskjfk
+												<MySource_PRINT id_name="__global__" var="current_asset" attr="short_name" />
 											</div>
 												<ul>
 													<MySource_ASSET>
@@ -193,7 +193,19 @@
 
           <!-- main content -->
 
-       		<MySource_AREA id_name="page_body" design_area="body" />
+
+          	<MySource_AREA id_name="landing_header" design_area="nest_content" />
+
+          	<MySource_AREA id_name="sub_page_links" design_area="nest_content" />
+
+          	<MySource_AREA id_name="page_body" design_area="body" />
+
+          	<MySource_AREA id_name="main_content" design_area="nest_content" />
+
+          	<MySource_AREA id_name="news_content" design_area="nest_content" />
+
+       			<MySource_AREA id_name="related_content" design_area="nest_content" />
+
 
     		</div>
     	</div>
