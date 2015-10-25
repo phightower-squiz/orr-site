@@ -107,110 +107,109 @@
 
     <main class="main" role="main">
 
-    	<!-- BREADCRUMBS -->
+        <!-- BREADCRUMBS -->
 
-			<MySource_AREA id_name="page_lineage" design_area="asset_lineage">
-	  	<MySource_SET name="prefix_with_home_link" value="true" />
-	  	<MySource_SET name="suffix_with_current_link" value="true" />
-		  <MySource_SET name="prefix_with_divider" value="false" />
-		  <MySource_SET name="suffix_with_divider" value="false" />
-		  <MySource_DIVIDER></MySource_DIVIDER>
-				<div class="container-fluid content-wrapper breadcrumb-wrapper">
-    			<div class="container breadcrumbs">
-				  	<ul>
-						  <MySource_ASSET>
-						    <li><a href="<MySource_PRINT var='asset_link' />">
-						    	<MySource_PRINT var="asset_short_name" /></a>
-						  	</li>
-						  </MySource_ASSET>
-						</ul>
-					</div>
-				</div>
-			</MySource_AREA> 
-					
-				
+            <MySource_AREA id_name="page_lineage" design_area="asset_lineage">
+          <MySource_SET name="prefix_with_home_link" value="true" />
+          <MySource_SET name="suffix_with_current_link" value="true" />
+          <MySource_SET name="prefix_with_divider" value="false" />
+          <MySource_SET name="suffix_with_divider" value="false" />
+          <MySource_DIVIDER></MySource_DIVIDER>
+                <div class="container-fluid content-wrapper breadcrumb-wrapper">
+                <div class="container breadcrumbs">
+                      <ul>
+                          <MySource_ASSET>
+                            <li><a href="<MySource_PRINT var='asset_link' />">
+                                <MySource_PRINT var="asset_short_name" /></a>
+                              </li>
+                          </MySource_ASSET>
+                        </ul>
+                    </div>
+                </div>
+            </MySource_AREA> 
+                    
+                
 
-			<!-- main body -->
+            <!-- main body -->
       <div class="container-fluid content-wrapper <mySource_PRINT var='asset_name^lowercase' />">
-				<div class="container">
- 					
+                <div class="container">
+                     
 
- 				<!-- side nav for inner pages -->
- 					<MySource_AREA id_name="side_menu" design_area="menu_normal">
+                 <!-- side nav for inner pages -->
+                     <MySource_AREA id_name="side_menu" design_area="menu_normal">
               <MySource_SET name="level" value="sub" />
               <MySource_SET name="settings.class.current" value="active" />
               <MySource_SET name="settings.class.normal" value="" />
 
-              		<div class="grid-3 nav-wrapper">
-										<div class="content-block sidenav">
-											<div class="top-nav-title"> 
-												<MySource_PRINT id_name="__global__" var="current_asset" attr="short_name" />
-											</div>
-												<ul>
-													<MySource_ASSET>
-														<li><a href="<MySource_PRINT var='asset_link' />" class="<MySource_PRINT var='settings.class' />">
-																	<MySource_PRINT var="asset_short_name" />
-   																	</a>
+                      <div class="grid-3 nav-wrapper">
+                                        <div class="content-block sidenav">
+                                            <div class="top-nav-title"> 
+                                                <MySource_PRINT id_name="__global__" var="current_asset" attr="short_name" />
+                                            </div>
+                                                <ul>
+                                                    <MySource_ASSET>
+                                                        <li><a href="<MySource_PRINT var='asset_link' />" class="<MySource_PRINT var='settings.class' />">
+                                                                    <MySource_PRINT var="asset_short_name" />
+                                                                       </a>
 
-			                      	<MySource_SUB id_name="side_menu1" design_area="menu_normal"><!-- Level 2 -->
-			                      		<MySource_SET name="show_subs" value="always" />
-			                      		<MySource_SET name="settings.class.current" value="active" />
-              									<MySource_SET name="settings.class.normal" value="" />
-				                          <ul class="subnav">
-				                          	<MySource_ASSET>
-				                            	<li><a href="<MySource_PRINT var='asset_link' />" class="<MySource_PRINT var='settings.class' />">
-																						<MySource_PRINT var="asset_short_name" />
-					   																	</a>
-				                                <MySource_SUB id_name="side_menu2" design_area="menu_normal"><!-- Level 3 -->
-				                                <MySource_SET name="show_subs" value="always" />
-							                      		<MySource_SET name="settings.class.current" value="active" />
-				              									<MySource_SET name="settings.class.normal" value="" />
-				                                  <ul class="subnav">
-				                                    <MySource_ASSET>
-				                                      <li><a href="<MySource_PRINT var='asset_link' />" class="<MySource_PRINT var='settings.class' />">
-																										<MySource_PRINT var="asset_short_name" />
-									   																	</a>
+                                      <MySource_SUB id_name="side_menu1" design_area="menu_normal"><!-- Level 2 -->
+                                          <MySource_SET name="show_subs" value="always" />
+                                          <MySource_SET name="settings.class.current" value="active" />
+                                                  <MySource_SET name="settings.class.normal" value="" />
+                                          <ul class="subnav">
+                                              <MySource_ASSET>
+                                                <li><a href="<MySource_PRINT var='asset_link' />" class="<MySource_PRINT var='settings.class' />">
+                                                                                        <MySource_PRINT var="asset_short_name" />
+                                                                                           </a>
+                                                <MySource_SUB id_name="side_menu2" design_area="menu_normal"><!-- Level 3 -->
+                                                <MySource_SET name="show_subs" value="always" />
+                                                          <MySource_SET name="settings.class.current" value="active" />
+                                                                  <MySource_SET name="settings.class.normal" value="" />
+                                                  <ul class="subnav">
+                                                    <MySource_ASSET>
+                                                      <li><a href="<MySource_PRINT var='asset_link' />" class="<MySource_PRINT var='settings.class' />">
+                                                                                                        <MySource_PRINT var="asset_short_name" />
+                                                                                                           </a>
 
-				                                        </li>
-				                                     </MySource_ASSET>
-				                                   </ul>
-				                                </MySource_SUB> 
+                                                        </li>
+                                                     </MySource_ASSET>
+                                                   </ul>
+                                                </MySource_SUB> 
 
-				                            	</li>
-				                          	</MySource_ASSET>
-				                        	</ul>
-				                    	</MySource_SUB> 
+                                                </li>
+                                              </MySource_ASSET>
+                                            </ul>
+                                        </MySource_SUB> 
 
-			                  		</li>
-		                  		</MySource_ASSET>
-                  			<ul>
+                                      </li>
+                                  </MySource_ASSET>
+                              <ul>
 
-										</div>
-									</div>
+                                        </div>
+                                    </div>
 
           </MySource_AREA>
  
 
           <!-- main content -->
 
+              <MySource_AREA id_name="landing_header" design_area="nest_content" />
 
-          	<MySource_AREA id_name="landing_header" design_area="nest_content" />
+              <MySource_AREA id_name="sub_page_links" design_area="nest_content" />
 
-          	<MySource_AREA id_name="sub_page_links" design_area="nest_content" />
+              <MySource_AREA id_name="page_body" design_area="body" />
 
-          	<MySource_AREA id_name="page_body" design_area="body" />
+              <MySource_AREA id_name="main_content" design_area="nest_content" />
 
-          	<MySource_AREA id_name="main_content" design_area="nest_content" />
+              <MySource_AREA id_name="news_content" design_area="nest_content" />
 
-          	<MySource_AREA id_name="news_content" design_area="nest_content" />
-
-       			<MySource_AREA id_name="related_content" design_area="nest_content" />
+                   <MySource_AREA id_name="related_content" design_area="nest_content" />
 
 
-    		</div>
-    	</div>
+            </div>
+        </div>
 
-    	<MySource_AREA id_name="twitter_block" design_area="nest_content" />
+        <MySource_AREA id_name="twitter_block" design_area="nest_content" />
 
     </main><!-- /#main -->
     <!-- end main-content -->
@@ -219,141 +218,9 @@
         
     <div class="container footer">
     
-
+     <MySource_AREA id_name="footer_links" design_area="nest_content" />
         
-            <div class="grid-footer">
-
-        
-        
-            <h2>About ORR</h2>
-
             
-                <ul>
-
-                
-                    
-                        <li><a href="#">Title</a></li>
-                    
-                
-                    
-                        <li><a href="#">Title 2</a></li>
-                    
-                
-                    
-                        <li><a href="#">Title 3</a></li>
-                    
-                
-                    
-                        <li><a href="#">Title 4</a></li>
-                    
-                
-                </ul>
-            
-            </div>
-        
-    
-
-        
-            <div class="grid-footer">
-
-        
-        
-            <h2>Other ORR Sites</h2>
-
-            
-                <ul>
-
-                
-                    
-                        <li><a href="#">Title</a></li>
-                    
-                
-                    
-                        <li><a href="#">Title 2</a></li>
-                    
-                
-                    
-                        <li><a href="#">Title 3</a></li>
-                    
-                
-                    
-                        <li><a href="#">Title 4</a></li>
-                    
-                
-                </ul>
-            
-            </div>
-        
-    
-
-        
-            <div class="grid-footer">
-
-        
-        
-            <h2>About this Site</h2>
-
-            
-                <ul>
-
-                
-                    
-                        <li><a href="#">Title</a></li>
-                    
-                
-                    
-                        <li><a href="#">Title 2</a></li>
-                    
-                
-                    
-                        <li><a href="#">Title 3</a></li>
-                    
-                
-                    
-                        <li><a href="#">Title 4</a></li>
-                    
-                
-                </ul>
-            
-            </div>
-        
-    
-
-        
-            <div class="grid-footer">
-
-        
-        
-            <h2>Contact Us</h2>
-
-            
-                <ul>
-
-                
-                    
-                        <li><a href="#">Title</a></li>
-                    
-                
-                    
-                        <li><a href="#">Title 2</a></li>
-                    
-                
-                    
-                        <li><a href="#">Title 3</a></li>
-                    
-                
-                    
-                        <li><a href="#">Title 4</a></li>
-                    
-                
-                </ul>
-            
-            </div>
-        
-    
-
-        
-
             <div class="grid-footer grid-social">
         
         
@@ -395,7 +262,7 @@
 
 
 
-    <div class="copyright">
+    <div class="copyright container-fluid">
         <div class="container">
             <div class="grid-5">&copy; 2015 Office of Rail Regulation</div>
             <div class="grid-7 license"><img src="mysource_files/logo-ogl.png">All content is available under the Open Government Licence v2.0, except where otherwise stated</div>

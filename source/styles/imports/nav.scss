@@ -39,8 +39,11 @@ nav {
 			.fa-plus-circle {
 				position: absolute;
 				right: 5px;
-				top: 35%;
+				top: 32%;
 				color: $company-color;
+				font-size: 1.4em;
+				z-index: 5;
+				cursor: pointer; 
 
 			}
 			&:hover {

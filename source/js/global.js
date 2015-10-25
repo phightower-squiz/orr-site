@@ -33,7 +33,7 @@ Modules
 --------------------
 */
 
-
+// Activate the mobile menu
 function mobileMenu(triggerEl) {
 	triggerEl.on('click', function(event) {
 		event.stopPropagation();
@@ -41,12 +41,6 @@ function mobileMenu(triggerEl) {
 
 		$('nav').toggleClass('active');
 		$('.subnav').css('display','block').removeClass('active');
-		/*if($('nav').hasClass('active')) {
-			$('nav').removeClass('active');
-		}
-		else {
-			$('nav').addClass('active');
-		}*/
 
 		addNavMoreIcon($('.mainnav'));
 
@@ -59,28 +53,44 @@ function resetMenu() {
 
 
 }
+// Add + more icon to items with subnavs
 function addNavMoreIcon(el) {
 	var itemsArray = el.children('li');
-	itemsArray.each(function() {
-		if($(this).children('.subnav').length > 0) {
-			$(this).append('<i class="fa fa-plus-circle"></i>');
-		}
+	$('nav ul').each(function() {
+		$(this).children('li').each(function(){
+			if($(this).children('.subnav').length > 0) {
+				$(this).append('<i class="fa fa-plus-circle"></i>');
+			}
+		});
+	});
+
+	navMoreClick();
+	
+}
+// Show subnavs on click
+function navMoreClick() {
+	$('nav ul li .fa-plus-circle').on('click', function(event){
+		event.stopPropagation();
+
+		mobileSubMenu($(this));
 	});
 }
 function removeNavMoreIcon() {
 	$('li').find('i').remove();
 
 }
+// Show submenus
 function mobileSubMenu(clickedMenuItem) {
 	if($('.mainnav').hasClass('mobile')) {
-		var targetSubNav = clickedMenuItem.children('.subnav');
-			if(clickedMenuItem.parent().hasClass('mainnav')) {
+
+		var targetSubNav = clickedMenuItem.parent().children('.subnav');
+			if(clickedMenuItem.parent().parent().hasClass('mainnav')) {
 				$('nav ul').not(targetSubNav).removeClass('active');
 			}
 
 			if(targetSubNav.length > 0 && $('.mainnav').hasClass('mobile')) {
 				targetSubNav.toggleClass('active');
-				addNavMoreIcon(targetSubNav);
+				//addNavMoreIcon(targetSubNav);
 			}
 	}
 	
@@ -133,14 +143,7 @@ function setMenuFunctions() {
 	subNavHover($('nav > ul > li'));
 	subNavAdjust($('nav > ul > li'));
 	mobileMenu($('.mobile-menu a'));
-	$('nav ul li').on('click', function(event){
-		event.stopPropagation();
-		if($(this).parent().hasClass('mobile')) {
-			event.preventDefault();
-		}
-		
-		mobileSubMenu($(this));
-	});
+	
 }
 $(document).ready(function() {
 	// nav functions
@@ -149,9 +152,7 @@ $(document).ready(function() {
 	$('.accordion').UberAccordion({
     buttonClass: 'accordion__link'
 	});
-	// just for testing style of active menu item
-	$('.sidenav > .subnav > li:first-child > a').addClass('active');
-
+	
 	$( window ).resize(function() {
 		// re-init menu functions
 		resetMenu();

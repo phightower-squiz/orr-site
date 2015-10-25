@@ -14,7 +14,10 @@ footer {
 		color: $footer-heading-color;
 	}
 	.grid-footer {
-		display: none;
+		//display: none;
+		width: 50%;
+		float: left;
+		padding: 1em;
 		&.grid-social {
 			width: 100%;
 			display: block;
@@ -53,6 +56,9 @@ footer {
 			a {
 				color: #000;
 				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
 			}
 		}
 	}

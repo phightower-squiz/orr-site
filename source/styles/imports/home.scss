@@ -143,6 +143,12 @@
 			}
 			.headline {
 				margin-left: 70px;
+				a {
+					color: #fff;
+					&:hover {
+						color: darken(#fff, 5%);
+					}
+				}
 			}
 		}
 	}
