@@ -145,6 +145,19 @@ function setMenuFunctions() {
 	mobileMenu($('.mobile-menu a'));
 	
 }
+function formatTwitterText() {
+	$('.twitter-text').each(function(){
+		var text = $(this).text();
+
+		
+		text = text.replace(/http([^ ]+)/g, "<a href='http$1'>http$1</a>");
+		text = text.replace(/#([^ ]+)/g, "<a href='http://twitter.com/search/%23$1'>#$1</a>");
+		text = text.replace(/@([^ ]+)/g, "<a href='http://twitter.com/$1'>@$1</a>");
+
+		$(this).html(text);
+
+	});
+}
 $(document).ready(function() {
 	// nav functions
 	setMenuFunctions();
@@ -160,7 +173,7 @@ $(document).ready(function() {
 		
 	});
 	
-
+formatTwitterText();
 });
 
 // initiate sliders
@@ -188,7 +201,7 @@ $(window).load(function(){
 		$(this).css('display', 'none');
 		$('.slick-pause').css('display', 'inline-block');
 	});
-	$('.h-feed').slick({
+	$('.twitter-block').slick({
 		slidesToShow: 3,
 		nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
 		prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
