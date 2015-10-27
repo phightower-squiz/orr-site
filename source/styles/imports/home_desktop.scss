@@ -14,66 +14,27 @@
 		margin-bottom: 0;
 		.grid-8 {
 
-			position: relative;
 			.slider-info {
 				position: absolute;
-				bottom: 25px;
+				display: block;
+				bottom: 65px;
 				left: 25px;
 				padding: 20px;
-				z-index: 1;
-				background: rgba(255,255,255,0.90);
-				width: 60%;
+				width: 70%;
 				height: auto;
+				z-index: 1;
+				background: rgba(255,255,255,0.80);
 				@extend %clearfix;
-				a {
-					text-decoration: none;
-					color: darken($company-color,10%);
-					float: left;
-				}
-				.home-about {
+
+				.slide-caption {
 					display: block;
 				}
-				.slider-nav {
-					float: right;
-					button {
-						background: none;
-						border: none;
-						outline: none;
-					}
-					.slick-arrow {
-						color: $company-color;
-						font-size: 1.5em;
-						&.slick-prev {
-							float: left;
-						}
-						&.slick-next {
-							float: right;
-						}
-					}
-					.slick-dots {
-						margin: 0;
-						padding: 0;
-						float: left;
-						font-size: 1em;
-						line-height: 2;
-						list-style-type: none;
-						li {
-							display: inline-block;
-							float: left;
-							&.slick-active {
-								button {
-									color: $accent-color;
-								}
-								
-							}
-						}
-
-					}
-					.slick-pause {
-						font-size: 1em;
-						line-height: 1.9;
-					}
-				}
+				
+			}
+			.slider-nav {
+				bottom: 25px;
+				left: 25px;
+				width: 70%;
 			}
 			
 		}
@@ -84,28 +45,9 @@
 /* latest news */
 
 .latest-news {
-	min-height: 334px;
+	min-height: 330px;
 
 }
-/*@media screen and (max-width: 1180px) {
-		.carousel {
-			width: 100%;
-			margin-bottom: 1em;
-			margin: 0 0 1em 0;
-		}
-    .latest-news {
-    	width: 100%;
-    	margin: 0;
-    }
-    .container {
-    	&.middle {
-    		padding: 0 !important;
-    	}
-    	&.top {
-    		margin-bottom: 0;
-    	}
-    }
-}*/
 
 
 /* middle section */

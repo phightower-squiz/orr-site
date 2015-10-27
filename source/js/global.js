@@ -171,17 +171,28 @@ $(window).load(function(){
 		autoplay: true,
 		appendArrows: $(".slider-nav"),
 		appendDots: $(".slider-nav"),
-		nextArrow: '<button type="button" class="slick-next">></button>',
-		prevArrow: '<button type="button" class="slick-prev"><</button>',
+		nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+		prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+		pauseOnHover: false,
+		fade: true
 
 	});
+
 	$('.slick-pause').on('click', function(){
 		$('.main-slider').slick('slickPause');
+		$(this).css('display', 'none');
+		$('.slick-play').css('display', 'inline-block');
 	});
-	$('.twitter-block').slick({
+	$('.slick-play').on('click', function(){
+		$('.main-slider').slick('slickPlay');
+		$(this).css('display', 'none');
+		$('.slick-pause').css('display', 'inline-block');
+	});
+	$('.h-feed').slick({
 		slidesToShow: 3,
-		nextArrow: '<button type="button" class="slick-next">></button>',
-		prevArrow: '<button type="button" class="slick-prev"><</button>',
+		nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+		prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+		
 		responsive: [
 	    
 	    {

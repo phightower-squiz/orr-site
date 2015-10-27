@@ -11,68 +11,77 @@
 
 			position: relative;
 			padding: 0;
-			.home-about {
-				display: none;
-			}
+			
 			.slider-info {
 				@extend %clearfix;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				height: 40px;
-				padding: 0;
-				z-index: 1;
-				background: rgba(255,255,255,0.90);
-
+	
+				.slide-caption {
+					display: none;
+				}
 				a {
 					text-decoration: none;
 					color: darken($company-color,10%);
 					float: left;
 				}
-				.slider-nav {
-					@extend %clearfix;
-					display: block;
-					button {
-						background: none;
-						border: none;
-						outline: none;
-					}
-					.slick-arrow {
-						color: $company-color;
-						font-size: 1.5em;
-						&.slick-prev {
-							float: left;
-						}
-						&.slick-next {
-							float: right;
-						}
-					}
-					.slick-dots {
-						margin: 0;
-						padding: 0;
-						float: left;
-						font-size: 1em;
-						line-height: 2;
-						list-style-type: none;
-						li {
-							display: inline-block;
-							float: left;
-							&.slick-active {
-								button {
-									color: $accent-color;
-								}
-								
-							}
-						}
+				
 
-					}
-					.slick-pause {
-						font-size: 1em;
-						line-height: 1.9;
-					}
+					
 				}
 			}
+			.slider-nav {
+				@extend %clearfix;
+
+				display: block;
+				//margin-top: 0.5em;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 40px;
+				padding: 0.5em 0;
+				z-index: 1;
+				background: rgba(255,255,255,0.80);
+				button {
+					background: none;
+					border: none;
+					outline: none;
+					display: inline-block;
+					.fa {
+						font-size: 1em;
+					}
+
+				}
+				.slick-arrow {
+					color: $company-color;
+
+					&.slick-prev {
+						float: left;
+					}
+					&.slick-next {
+						//float: right;
+					}
+				}
+				.slick-dots {
+					margin: 0;
+					padding: 0;
+					float: left;
+					font-size: 1em;
+					list-style-type: none;
+					li {
+						display: inline-block;
+						float: left;
+						&.slick-active {
+							button {
+								color: $accent-color;
+							}
+							
+						}
+					}
+
+				}
+				.slick-play {
+					display: none;
+				}
 			
 		}
 		
@@ -191,6 +200,12 @@
 		text-align: center;
 		padding: 20px 0;
 		.twitter-block {
+			.h-feed {
+				li.h-entry.tweet {
+					display: inline-block;
+					float: left;
+				}
+			}
 			&.slick-slider {
 				button {
 					position: absolute;
