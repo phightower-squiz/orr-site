@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        
+        <title><mysource_PRINT var="site_name" /></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <mysource_AREA id_name="metadata" design_area="metadata" />
+        <link rel="icon" href="favicon.ico">
+        <!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
+        <link rel="apple-touch-icon-precomposed" href="/logo-[[output://create_Bodycopy_144.assetid]]x[[output://create_Bodycopy_144.assetid]].png">
+        <link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+<MySource_AREA id_name="global" design_area="linked_css" />
+
+<link rel="stylesheet" type="text/css" href="mysource_files/medium.css" media="screen and (min-width: 41.0625em)">
+<link rel="stylesheet" type="text/css" href="mysource_files/wide.css" media="screen and (min-width:60em)">
+<link rel="stylesheet" type="text/css" href="mysource_files/print.css" media="print">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" type="text/css" href="styles/medium.css">
+<link rel="stylesheet" type="text/css" href="styles/wide.css">
+<link rel="stylesheet" type="text/css" href="styles/ie8.css">
+<![endif]-->
+<!--[if lt IE 10]>
+<link rel="stylesheet" type="text/css" href="styles/ie9.css">
+<![endif]-->
+
+<!--[if lt IE 9]>
+    <script src="js/selectivizr-min.js"></script>
+<![endif]-->
+    </head>
+
+<!--[if lt IE 7]><body class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><body class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><body class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<body class="no-js">
+<!--<![endif]-->
+<div id="page-wrapper">
+    <!--noindex-->
+    <header class="header" role="banner">
+        
+    <div class="grid-8">
+        <a href="<MySource_PRINT id_name='__global__' var='site_link' />"><img src="mysource_files/logo-orr.png"  alt="ORR logo" class="logo"></a>
+    </div>
+    <div class="grid-4">
+        <div class="mobile-menu" role="button">
+            <a href="#"><span>MENU</span> <i class="fa fa-bars"></i></a>
+        </div>
+        <div class="search">
+            <form>
+                <input type="search" placeholder="Search">
+            </form>
+        </div>
+
+    </div>
+
+
+    </header><!-- /.header -->
+    <nav>
+    
+    <ul class="mainnav">
+
+        <MySource_AREA id_name="menu" design_area="menu_normal">
+              <MySource_SET name="level" value="top" />
+              <MySource_SET name="show_subs" value="always" />
+              <MySource_DIVIDER></MySource_DIVIDER>
+              <MySource_ASSET>
+                  <li><MySource_PRINT var="asset_name_linked" />
+
+                      <MySource_SUB id_name="menu1" design_area="menu_normal"><!-- Level 2 -->
+                      <MySource_SET name="show_subs" value="always" />
+                          <ul class="subnav">
+                          <MySource_ASSET>
+                            <li><MySource_PRINT var="asset_name_linked" />
+                                <MySource_SUB id_name="menu2" design_area="menu_normal"><!-- Level 3 -->
+                                      <ul class="subnav">
+                                      <MySource_ASSET>
+                                        <li><MySource_PRINT var="asset_name_linked" />
+
+
+                                        </li>
+                                      </MySource_ASSET>
+                                    </ul>
+                                </MySource_SUB> 
+
+                            </li>
+                          </MySource_ASSET>
+                        </ul>
+                    </MySource_SUB> 
+
+
+                  </li>
+                
+              </MySource_ASSET>
+            </MySource_AREA> 
+
+        </ul>
+    
+
+    </nav>
+    <!--endnoindex-->
+    <!-- start main-content -->
+
+    <main class="main" role="main">
+
+    	<!-- BREADCRUMBS -->
+
+			<MySource_AREA id_name="page_lineage" design_area="asset_lineage">
+	  	<MySource_SET name="prefix_with_home_link" value="true" />
+	  	<MySource_SET name="suffix_with_current_link" value="true" />
+		  <MySource_SET name="prefix_with_divider" value="false" />
+		  <MySource_SET name="suffix_with_divider" value="false" />
+		  <MySource_DIVIDER></MySource_DIVIDER>
+				<div class="container-fluid content-wrapper breadcrumb-wrapper">
+    			<div class="container breadcrumbs">
+				  	<ul>
+						  <MySource_ASSET>
+						    <li><a href="<MySource_PRINT var='asset_link' />">
+						    	<MySource_PRINT var="asset_short_name" /></a>
+						  	</li>
+						  </MySource_ASSET>
+						</ul>
+					</div>
+				</div>
+			</MySource_AREA> 
+					
+				
+
+			<!-- main body -->
+      <div class="container-fluid content-wrapper <mySource_PRINT var='asset_name^lowercase' />">
+				<div class="container">
+ 					
+
+ 				<!-- side nav for inner pages -->
+ 					<MySource_AREA id_name="side_menu" design_area="menu_normal">
+              <MySource_SET name="level" value="sub" />
+              <MySource_SET name="settings.class.current" value="active" />
+              <MySource_SET name="settings.class.normal" value="" />
+
+              		<div class="grid-3 nav-wrapper">
+										<div class="content-block sidenav">
+											<div class="top-nav-title"> 
+												<MySource_PRINT id_name="__global__" var="current_asset" attr="short_name" />
+											</div>
+												<ul>
+													<MySource_ASSET>
+														<li><a href="<MySource_PRINT var='asset_link' />" class="<MySource_PRINT var='settings.class' />">
+																	<MySource_PRINT var="asset_short_name" />
+   																	</a>
+
+			                      	<MySource_SUB id_name="side_menu1" design_area="menu_normal"><!-- Level 2 -->
+			                      		<MySource_SET name="show_subs" value="always" />
+			                      		<MySource_SET name="settings.class.current" value="active" />
+              									<MySource_SET name="settings.class.normal" value="" />
+				                          <ul class="subnav">
+				                          	<MySource_ASSET>
+				                            	<li><a href="<MySource_PRINT var='asset_link' />" class="<MySource_PRINT var='settings.class' />">
+																						<MySource_PRINT var="asset_short_name" />
+					   																	</a>
+				                                <MySource_SUB id_name="side_menu2" design_area="menu_normal"><!-- Level 3 -->
+				                                <MySource_SET name="show_subs" value="always" />
+							                      		<MySource_SET name="settings.class.current" value="active" />
+				              									<MySource_SET name="settings.class.normal" value="" />
+				                                  <ul class="subnav">
+				                                    <MySource_ASSET>
+				                                      <li><a href="<MySource_PRINT var='asset_link' />" class="<MySource_PRINT var='settings.class' />">
+																										<MySource_PRINT var="asset_short_name" />
+									   																	</a>
+
+				                                        </li>
+				                                     </MySource_ASSET>
+				                                   </ul>
+				                                </MySource_SUB> 
+
+				                            	</li>
+				                          	</MySource_ASSET>
+				                        	</ul>
+				                    	</MySource_SUB> 
+
+			                  		</li>
+		                  		</MySource_ASSET>
+                  			<ul>
+
+										</div>
+									</div>
+
+          </MySource_AREA>
+ 
+
+          <!-- main content -->
+
+
+          	<MySource_AREA id_name="landing_header" design_area="nest_content" />
+
+          	<MySource_AREA id_name="sub_page_links" design_area="nest_content" />
+
+          	<MySource_AREA id_name="page_body" design_area="body" />
+
+          	<MySource_AREA id_name="main_content" design_area="nest_content" />
+
+          	<MySource_AREA id_name="news_content" design_area="nest_content" />
+
+       			<MySource_AREA id_name="related_content" design_area="nest_content" />
+
+
+    		</div>
+    	</div>
+
+    	<MySource_AREA id_name="twitter_block" design_area="nest_content" />
+
+    </main><!-- /#main -->
+    <!-- end main-content -->
+    <!--noindex-->
+    <footer class="footer" role="contentinfo">
+        
+    <div class="container footer">
+    
+
+        
+            <div class="grid-footer">
+
+        
+        
+            <h2>About ORR</h2>
+
+            
+                <ul>
+
+                
+                    
+                        <li><a href="#">Title</a></li>
+                    
+                
+                    
+                        <li><a href="#">Title 2</a></li>
+                    
+                
+                    
+                        <li><a href="#">Title 3</a></li>
+                    
+                
+                    
+                        <li><a href="#">Title 4</a></li>
+                    
+                
+                </ul>
+            
+            </div>
+        
+    
+
+        
+            <div class="grid-footer">
+
+        
+        
+            <h2>Other ORR Sites</h2>
+
+            
+                <ul>
+
+                
+                    
+                        <li><a href="#">Title</a></li>
+                    
+                
+                    
+                        <li><a href="#">Title 2</a></li>
+                    
+                
+                    
+                        <li><a href="#">Title 3</a></li>
+                    
+                
+                    
+                        <li><a href="#">Title 4</a></li>
+                    
+                
+                </ul>
+            
+            </div>
+        
+    
+
+        
+            <div class="grid-footer">
+
+        
+        
+            <h2>About this Site</h2>
+
+            
+                <ul>
+
+                
+                    
+                        <li><a href="#">Title</a></li>
+                    
+                
+                    
+                        <li><a href="#">Title 2</a></li>
+                    
+                
+                    
+                        <li><a href="#">Title 3</a></li>
+                    
+                
+                    
+                        <li><a href="#">Title 4</a></li>
+                    
+                
+                </ul>
+            
+            </div>
+        
+    
+
+        
+            <div class="grid-footer">
+
+        
+        
+            <h2>Contact Us</h2>
+
+            
+                <ul>
+
+                
+                    
+                        <li><a href="#">Title</a></li>
+                    
+                
+                    
+                        <li><a href="#">Title 2</a></li>
+                    
+                
+                    
+                        <li><a href="#">Title 3</a></li>
+                    
+                
+                    
+                        <li><a href="#">Title 4</a></li>
+                    
+                
+                </ul>
+            
+            </div>
+        
+    
+
+        
+
+            <div class="grid-footer grid-social">
+        
+        
+            <h2>Follow Us</h2>
+
+            
+                <ul>
+
+                
+                    
+                        <li class="social"><a href="#"><div class="social-icon twitter"></div></a></li>
+                    
+                
+                    
+                        <li class="social"><a href="#"><div class="social-icon linked-in"></div></a></li>
+                    
+                
+                    
+                        <li class="social"><a href="#"><div class="social-icon youtube"></div></a></li>
+                    
+                
+                    
+                        <li class="social"><a href="#"><div class="social-icon rss"></div></a></li>
+                    
+                
+                    
+                        <li class="social"><a href="#"><div class="social-icon email"></div></a></li>
+                    
+                
+                </ul>
+            
+            </div>
+        
+    
+
+    </div>
+    <div class="container pdf-download"><a href="#" class="icon-link ext-link">Download the latest verison of Adobe Reader</a></div>
+
+
+
+
+    <div class="copyright">
+        <div class="container">
+            <div class="grid-5">&copy; 2015 Office of Rail Regulation</div>
+            <div class="grid-7 license"><img src="mysource_files/logo-ogl.png">All content is available under the Open Government Licence v2.0, except where otherwise stated</div>
+        </div>
+    </div>
+
+
+
+    </footer><!-- /.footer -->
+    <!--endnoindex-->
+</div><!-- /#page-wrapper -->
+
+<script type="text/javascript" src="mysource_files/jquery.min.js"></script>
+<script type="text/javascript" src="mysource_files/modernizr.min.js"></script>
+<script type="text/javascript" src="mysource_files/plugins.min.js"></script>
+<script type="text/javascript" src="mysource_files/global.js"></script>
+
+
+</body>
+</html>
