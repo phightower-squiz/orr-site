@@ -4,3 +4,20 @@ title
 link
 description
 The RSS should be in the correct format to be read by RSS readers.
+
+funnelback search
+
+Create a Funnelback web collection that indexes:
+Content
+Title
+Headings
+Description
+Keywords
+Subject
+Author
+
+Create two facets, one Hierachical for Published year/month and one for subject.
+
+Create a Funnelback REST Search Page.
+
+Embed your Funnelback Rest Asset into your site and create a nested content area for the search box.
