@@ -203,6 +203,7 @@ $(window).load(function(){
 	});
 	$('.twitter-block').slick({
 		slidesToShow: 3,
+		slidesToScroll: 3,
 		nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
 		prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
 		

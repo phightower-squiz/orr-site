@@ -86,28 +86,18 @@
 /* bottom secion - Twitter API */
 .container-fluid {
 	&.bottom {
-		background: lighten(#000,80%);
-		text-align: center;
+
 		padding: 0;
 		.twitter-block {
-			padding: 0 0.5em;
-			margin-bottom: 0;
+			padding: 0 1.5em;
+			margin: 1em auto;
 			.slick-next {
-				right: 0.4em !important;
+				right: 0 !important;
 			}
 			.slick-prev {
-				left: 0.4em;
+				left: 0 !important;
 			}
 		}
-		.twitter-feed {
-			width: 30%;
-			margin: 1%;
-			height: 200px;
-			background: #fff;
-			padding: 0.5em;
-			float: left;
 
-			
-		}
 	}
 }

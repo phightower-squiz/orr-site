@@ -1,0 +1,6 @@
+The news RSS feed should have the following fields:
+pubDate
+title
+link
+description
+The RSS should be in the correct format to be read by RSS readers.
