@@ -21,3 +21,48 @@ Create two facets, one Hierachical for Published year/month and one for subject.
 Create a Funnelback REST Search Page.
 
 Embed your Funnelback Rest Asset into your site and create a nested content area for the search box.
+
+
+
+https://fun101.funnelback.co.uk/s/search.html?%globals_server_QUERY_STRING^replace:collection=paula_hightower_orr:^replace:form=search:^replace:&+:&%&collection=paula_hightower_orr&form=search
+
+
+https://demo.funnelback.co.uk/s/search.html?%globals_server_query_string^replace:profile=PROFILEID:^replace:collection=COLLECTIONID:^replace:form=FORMID:^replace:&+:&%&collection=COLLECTIONID&profile=PROFILEID&form=FORMID
+
+https://fun101.funnelback.co.uk/s/search.html?%globals_server_query_string^replace:profile=PROFILEID:^replace:collection=paula_hightower_orr:^replace:form=FORMID:^replace:&+:&%&collection=paula_hightower_orr&profile=PROFILEID&form=FORMID
+
+
+http://fun101.funnelback.co.uk/s/search.html?%globals_server_query_string^replace:profile=_default:^replace:collection=paula_hightower_orr:^replace:form=simple:^replace:&+:&%&collection=paula_hightower_orr&profile=_default&form=simple
+
+var body = _REST.response.body;
+ 
+/////////////////////////////
+// User Editable Variables //
+/////////////////////////////
+ 
+// The Funnelback server address
+var searchServer = 'http://FUNNELBACK-SERVER';
+ 
+// The relative path to the current search page in Matrix
+var searchPath   = 'search';
+ 
+//////////////////////////
+// Perform Replacements //
+//////////////////////////
+ 
+// Rewrite Funnelback Public UI URL to current URL
+body = body.replace(/search\.html/g, searchPath);
+body = body.replace(/search/search\.cgi/g, searchPath);
+ 
+// Click tracking path replacement
+body = body.replace(/click\.cgi/g, searchServer + '/search/click.cgi');
+ 
+// Cache link path replacement
+body = body.replace(/cache\.ftl/g, searchServer + '/s/cache.ftl');
+body = body.replace(/cache\.cgi/g, searchServer + '/search/cache.cgi');
+ 
+// Output the data from Funnelback
+print(body);
+
+
+

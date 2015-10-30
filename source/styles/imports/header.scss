@@ -47,18 +47,26 @@ header {
 	}
 	.search {
 		width: 90%;
-		border: 1px solid darken($company-color,10%);
-		background: url('mysource_files/mag.png') no-repeat 97% 10px;
 		margin: 0 auto;
 		form {
-			text-align: left;
+			position: relative;
 			input {
-				border: none;
-				width: 88%;
+				border: 1px solid darken($company-color,10%);
+				width: 100%;
 				height: 20px;
 				
 				padding: 5px;
 				outline: none;
+				&[type='submit'] {
+					position: absolute;
+					top: 8px;
+					right: -5px;
+					height: 20px;
+					width: 20px;
+					background: url('mysource_files/mag.png') no-repeat;
+					border: none;
+					font-size: 0;
+				}
 
 			}
 		}
