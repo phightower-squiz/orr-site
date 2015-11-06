@@ -1,0 +1,15 @@
+.search {
+	.col-md-9 {
+		@extend .grid-9;
+	}
+	.col-md-3 {
+		@extend .grid-3;
+	}
+	.container .row {
+		@extend %clearfix;
+	}
+	#search-results {
+		border-right: 1px solid #ccc;
+	}
+	
+}

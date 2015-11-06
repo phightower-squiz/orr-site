@@ -158,6 +158,20 @@ function formatTwitterText() {
 
 	});
 }
+function FunnelbackSearchFixes() {
+	$('#search-results li.search-tier').remove();
+	$('#search-results > li').each(function(){
+		var url = $(this).attr('data-fb-result');
+		$(this).children('h4').children('a').attr('href', url);
+	});
+}
+function gaTest() {
+	// experiment with google analytics
+
+
+console.log('test ga');
+ga('send', 'event', 'tests', 'click-page', 'test label', 'who we are', {'nonInteraction': 1});
+}
 $(document).ready(function() {
 	// nav functions
 	setMenuFunctions();
@@ -174,7 +188,9 @@ $(document).ready(function() {
 	});
 	
 formatTwitterText();
+FunnelbackSearchFixes();
 });
+
 
 // initiate sliders
 $(window).load(function(){
