@@ -5,12 +5,7 @@ Modules
 --------------------
 */
 
-require.config({
-  paths: {
-    "jquery": "vendor/jquery.min"
-  }
-});
-require([
+define([
 	'jquery',
 	//'modules/accordion',
 	'modules/menus',

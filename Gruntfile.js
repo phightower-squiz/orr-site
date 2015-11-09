@@ -19,6 +19,7 @@ module.exports = function (grunt) {
         'grunt-cssbeautifier',
         'grunt-prettify',
         'grunt-jsbeautifier',
+        'grunt-contrib-requirejs',
         { 'grunt-squiz-boilerplate': ['boilerplate'] },
         { 'grunt-html-validation': ['validation'] },
         { 'grunt-lib-phantomjs': ['htmlcs', 'qunit'] }
@@ -284,12 +285,6 @@ module.exports = function (grunt) {
             src: 'favicon.ico'
         },
 
-        requireJS: {
-            expand: true,
-            cwd: '<%= config.source %>/js/',
-            dest: '<%= config.dest %>/js/',
-            src: ['require.js', 'modules/*.js', 'modules/plugins/*.js']
-        }
     };
 
     tasks.clean = {
@@ -643,11 +638,11 @@ module.exports = function (grunt) {
     tasks.requirejs = {
         compile: {
             options: {
-                mainConfigFile: '<%= config.source %>/js/config.js',
-                name: 'main',
-                insertRequire: ['main'],
+                mainConfigFile: '<%= config.source %>/js/global-config.js',
+                name: 'global',
+                insertRequire: ['global'],
                 findNestedDependencies: true,
-                out: '<%= config.dest %>/js/main-optimized.js',
+                out: '<%= config.dest %>/js/global-optimized.js',
                 optimize: 'none',//'uglify',
                 wrapShim: true
             }
@@ -695,7 +690,8 @@ module.exports = function (grunt) {
         'substitute:html',
         (docMode) ? 'boilerplate:doc' : 'boilerplate:html',
         'substitute',
-        'newer:copy:requireJS',
+        'requirejs',
+        //'newer:copy:requireJS',
         'assemble',
         'clean:distFragments'
     ]);
@@ -709,7 +705,8 @@ module.exports = function (grunt) {
         'newer:copy:moduleFiles',
         'newer:copy:moduleCSSFiles',
         'newer:copy:moduleFonts',
-        'newer:copy:requireJS',
+        //'newer:copy:requireJS',
+        'requirejs',
         'substitute',
         'assemble',
         'clean:distFragments',
