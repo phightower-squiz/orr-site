@@ -33,76 +33,67 @@ Modules
 --------------------
 */
 
-// Activate the mobile menu
-function mobileMenu(triggerEl) {
-	triggerEl.on('click', function(event) {
-		event.stopPropagation();
-		$('.mainnav').addClass('mobile');
+var ORR = ORR || {};
+ORR.event = {};
 
-		$('nav').toggleClass('active');
-		$('.subnav').css('display','block').removeClass('active');
+ORR.initMenus = {
+	init: {
+		isMobile: false,
+		mainNavClass: '.mainnav',
+		navWrapper: 'nav',
+		subNavClass: '.subnav'
+	},
+	testFunc: function(name){
+		
+    console.log('test  ' + this.init.isMobile);
+  },
+  // set to mobile and show the submenus
+  mobileMenu: function(trigger) {
+  	$(this.init.mainNavClass).addClass('mobile');
+		$(this.init.navWrapper).toggleClass('active');
+		$(this.init.subNavClass).css('display','block').removeClass('active');
+		this.removeNavMoreIcon();
+		this.init.isMobile = true;
+		this.subNavAdjust($(this.init.navWrapper + ' > ul > li'));
+		return false;
 
-		addNavMoreIcon($('.mainnav'));
-
-	});
-}
-function resetMenu() {
-	$('.mainnav').removeClass('mobile');
-	$('nav').removeAttr('class');
-	removeNavMoreIcon();
-
-
-}
-// Add + more icon to items with subnavs
-function addNavMoreIcon(el) {
-	var itemsArray = el.children('li');
-	$('nav ul').each(function() {
-		$(this).children('li').each(function(){
-			if($(this).children('.subnav').length > 0) {
-				$(this).append('<i class="fa fa-plus-circle"></i>');
-			}
+  },
+  // mobile: add the more icon to each nav with subnavs
+  addNavMoreIcon: function(el) {
+  	var self = this;
+  	var itemsArray = el.children('li');
+		$(this.init.navWrapper + ' ul').each(function() {
+			$(this).children('li').each(function(){
+				if($(this).children(self.init.subNavClass).length > 0) {
+					$(this).append('<i class="fa fa-plus-circle"></i>');
+				}
+			});
 		});
-	});
+  },
+  removeNavMoreIcon: function() {
+  	$('.mainnav .fa-plus-circle').remove();
+  },
+  // mobile: show the submenus when clicking the more icon
+  mobileSubMenu: function(clickedMenuItem){
+  	if($(this.init.mainNavClass).hasClass('mobile')) {
+				var targetSubNav = clickedMenuItem.parent().children(this.init.subNavClass);
+				if(clickedMenuItem.parent().parent().hasClass(this.init.mainNavClass.substring(1))) {
+					$(this.init.navWrapper + ' ul').not(targetSubNav).removeClass('active');
+				}
 
-	navMoreClick();
-	
-}
-// Show subnavs on click
-function navMoreClick() {
-	$('nav ul li .fa-plus-circle').on('click', function(event){
-		event.stopPropagation();
-
-		mobileSubMenu($(this));
-	});
-}
-function removeNavMoreIcon() {
-	$('li').find('i').remove();
-
-}
-// Show submenus
-function mobileSubMenu(clickedMenuItem) {
-	if($('.mainnav').hasClass('mobile')) {
-
-		var targetSubNav = clickedMenuItem.parent().children('.subnav');
-			if(clickedMenuItem.parent().parent().hasClass('mainnav')) {
-				$('nav ul').not(targetSubNav).removeClass('active');
-			}
-
-			if(targetSubNav.length > 0 && $('.mainnav').hasClass('mobile')) {
-				targetSubNav.toggleClass('active');
-				//addNavMoreIcon(targetSubNav);
-			}
-	}
-	
-
-}
-
-function subNavHover(hoverEl) { // desktop/wide
-	var targetEl;
+				if(targetSubNav.length > 0 && $(this.init.mainNavClass).hasClass('mobile')) {
+					targetSubNav.toggleClass('active');
+				}
+		}
+  },
+  // desktop: show submenus on hover
+  subNavHover: function(hoverEl) {
+  	var self = this;
+  	var targetEl;
 		hoverEl.hover(
 			function(){
-				if(!$('.mainnav').hasClass('mobile')) {
-					targetEl = $(this).children('.subnav');
+				if(!$(self.init.mainNavClass).hasClass('mobile')) {
+					targetEl = $(this).children(self.init.subNavClass);
 					if(targetEl.length > 0) {
 						targetEl.fadeIn();
 					}
@@ -110,41 +101,59 @@ function subNavHover(hoverEl) { // desktop/wide
 					
 			},
 				function(){
-					if(!$('.mainnav').hasClass('mobile')) {
+					if(!$(self.init.mainNavClass).hasClass('mobile')) {
 						targetEl.fadeOut();
 					}
 				}
 		);
-	
-}
+  },
+  // desktop: adjust submenu position if it goes outside the width of the screen
+  subNavAdjust: function(el) { 
+  	var self = this;
+		var targetEls = el.children(self.init.subNavClass);
+		if(!$(self.init.mainNavClass).hasClass('mobile')) {
+			$(self.init.mainNavClass).children(self.init.subNavClass).css('display','none');
+			targetEls.each(function() {
 
-function subNavAdjust(el) { // desktop/wide
-	var targetEls = el.children('.subnav');
-	if(!$('.mainnav').hasClass('mobile')) {
-		$('.mainnav').children('.subnav').css('display','none');
-		targetEls.each(function() {
+				// adjust position if over edge of window
+				var subNavWidth = $(this).width();
+				var winWidth = $(window).width();
+				var subNavPos = $(this).parent().position();
+				var subNavPosLeft = subNavPos.left;
+				
 
-			// adjust position if over edge of window
-			var subNavWidth = $(this).width();
-			var winWidth = $(window).width();
-			var subNavPos = $(this).parent().position();
-			var subNavPosLeft = subNavPos.left;
+				if(subNavPosLeft + subNavWidth > winWidth) {
+					var diff = (subNavPosLeft + subNavWidth) - winWidth;
+					$(this).css('left', (subNavPosLeft - (diff + 25)) + 'px');
+				}
 
-			if(subNavPosLeft + subNavWidth > winWidth) {
-				var diff = (subNavPosLeft + subNavWidth) - winWidth;
-				$(this).css('left', (subNavPosLeft - (diff + 25)) + 'px');
-			}
+			});
+		}
+		else {
+			targetEls.css('left', 0);
+		}
 
-		});
+	},
+	setMenuFunctions: function() {
+		this.subNavHover($(this.init.navWrapper + ' > ul > li'));
+		this.subNavAdjust($(this.init.navWrapper + ' > ul > li'));
+	},
+	resetMenus: function() {
+		if(this.init.isMobile) {
+			this.init.isMobile = false;
+			$(this.init.mainNavClass).removeClass('mobile');
+		}
+		else {
+			$(this.init.subNavClass).css('display','none');
+			
+		}
+		this.removeNavMoreIcon();
+		$(this.init.subNavClass).removeClass('active');
+		$(this.init.navWrapper).removeClass('active');
+		this.setMenuFunctions();
 	}
-	
 }
-function setMenuFunctions() {
-	subNavHover($('nav > ul > li'));
-	subNavAdjust($('nav > ul > li'));
-	mobileMenu($('.mobile-menu a'));
-	
-}
+
 function formatTwitterText() {
 	$('.twitter-text').each(function(){
 		var text = $(this).text();
@@ -172,28 +181,47 @@ function gaTest() {
 console.log('test ga');
 ga('send', 'event', 'tests', 'click-page', 'test label', 'who we are', {'nonInteraction': 1});
 }
+
+/*var blah = $.extend(true, {}, ORR.initMenus);
+
+blah.init.isMobile = true;
+
+console.log(blah.init.mainNavClass);
+blah.testFunc();*/
+
+/*
+--------------------
+Global
+--------------------
+*/
+
 $(document).ready(function() {
-	// nav functions
-	setMenuFunctions();
-	// accordion
-	$('.accordion').UberAccordion({
-    buttonClass: 'accordion__link'
+	$('.mobile-menu a').on('click', function(event){
+		ORR.initMenus.mobileMenu();
+		ORR.initMenus.addNavMoreIcon($(ORR.initMenus.init.mainNavClass));
 	});
+
+	$('nav').on('click', 'ul li .fa-plus-circle', function(event){
+		event.stopPropagation();
+		ORR.initMenus.mobileSubMenu($(this));
+	});
+
+	ORR.initMenus.setMenuFunctions();
 	
+
 	$( window ).resize(function() {
-		// re-init menu functions
-		resetMenu();
-		setMenuFunctions();
+		ORR.initMenus.resetMenus();
 		
 	});
-	
-formatTwitterText();
-FunnelbackSearchFixes();
-});
 
 
-// initiate sliders
-$(window).load(function(){
+	// accordion
+	$('.accordion').UberAccordion({
+	    buttonClass: 'accordion__link'
+	});
+	formatTwitterText();
+	FunnelbackSearchFixes();
+
 	$('.main-slider').slick({
 		slidesToShow: 1,
 		dots: true,
@@ -243,3 +271,7 @@ $(window).load(function(){
 	  ]
 	});
 });
+
+//  Declare JS Enabled. 
+$('body').removeClass('no-js').addClass('js-enabled');
+
