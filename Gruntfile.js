@@ -282,6 +282,13 @@ module.exports = function (grunt) {
             cwd: '<%= config.source %>/html/',
             dest: '<%= config.dest %>',
             src: 'favicon.ico'
+        },
+
+        requireJS: {
+            expand: true,
+            cwd: '<%= config.source %>/js/',
+            dest: '<%= config.dest %>/js/',
+            src: ['require.js', 'modules/*.js', 'modules/plugins/*.js']
         }
     };
 
@@ -532,8 +539,8 @@ module.exports = function (grunt) {
             reporter: require('jshint-stylish')
         },
         all: [
-            '<%= config.dest %>/scripts/{,*/}*.js',
-            '!<%= config.dest %>/scripts/plugins.js',
+            '<%= config.dest %>/jsxx/{,*/}*.js',
+            '!<%= config.dest %>/js/plugins.js',
             'test/spec/{,*/}*.js'
         ]
     };
@@ -630,6 +637,22 @@ module.exports = function (grunt) {
             tasks: ['build']
         }
     };
+    ////////////////////////////
+    // RequireJS optimization //
+    ////////////////////////////
+    tasks.requirejs = {
+        compile: {
+            options: {
+                mainConfigFile: '<%= config.source %>/js/config.js',
+                name: 'main',
+                insertRequire: ['main'],
+                findNestedDependencies: true,
+                out: '<%= config.dest %>/js/main-optimized.js',
+                optimize: 'none',//'uglify',
+                wrapShim: true
+            }
+        },
+    };
 
     tasks.cssbeautifier = {
         files: [
@@ -672,6 +695,7 @@ module.exports = function (grunt) {
         'substitute:html',
         (docMode) ? 'boilerplate:doc' : 'boilerplate:html',
         'substitute',
+        'newer:copy:requireJS',
         'assemble',
         'clean:distFragments'
     ]);
@@ -685,6 +709,7 @@ module.exports = function (grunt) {
         'newer:copy:moduleFiles',
         'newer:copy:moduleCSSFiles',
         'newer:copy:moduleFonts',
+        'newer:copy:requireJS',
         'substitute',
         'assemble',
         'clean:distFragments',
